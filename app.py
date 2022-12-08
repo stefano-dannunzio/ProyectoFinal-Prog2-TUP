@@ -1,15 +1,7 @@
-#Usuarios Registrados
-usuarios = [
-    {
-        "user": "marciabel",
-        "pass": "123456"
-    },
-    {
-        "user": "pome96",
-        "pass": "123432"
-    },
-    {
-        "user": "stefasito",
-        "pass": "123321"
-    }
-]
+#Importación de módulos
+from flask import Flask, jsonify, request
+
+#Importación de Usuarios
+from users import users
+
+app = Flask(__name__)
