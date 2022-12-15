@@ -7,8 +7,21 @@ from users import users
 #Importación de películas
 from movies import movies
 
+#--------------------------------------------------------------------
+
+#Módulo privado
+def private_module():
+    print("privado")
+
+#Módulo público
+def public_module():
+    print("publico")
+
+
+#--------------------------------------------------------------------
+
 #Mensaje de bienvenida
-print('------------------ MoviesListManager v1.0 ------------------')
+print("------------------ MoviesListManager v1.0 ------------------")
 print("Por Marcia B. Álvarez, Stefano D'Annunzio y Pamela Dominguez")
 
 #Menu de Autenticación
@@ -18,30 +31,42 @@ print('---------------------------------')
 print('1. COMO USUARIO REGISTRADO')
 print('2. COMO INVITADO (Módulo público)')
 print('---------------------------------')
-option = input(print('Elija una opción: '))
+option = int(input('Elija una opción: '))
 
-match option:
-    case 1:
-        user = input(print('Ingrese su usuario: '))
-        password = input(print('Ingrese su contraseña: '))
-        if (user in users):
-            if (password == users[user]):
-                print('Hola,', user)
-                logged_in = True
-            else:
-                print('Contraseña incorrecta.')
-                print('Accederás al módulo público.')
+if option == 1:
+    
+    user_input = input('Ingrese su usuario: ')
+    password_input = input('Ingrese su contraseña: ')
+    # --- CHEQUEO DE USUARIO Y CONTRASEÑA ---
+
+    #Busqueda de usuario
+    user = next((matching_user for matching_user in users if matching_user["user"] == user_input), None)
+
+    #Chequeo por existencia de usuario
+    if (user != None):
+        #Chequeo por coincidencia de contraseña respectiva del usuario
+        if (password_input == user["pass"]):
+            print('Hola,', user["user"])
+            logged_in = True
         else:
-            print('No existe ese usuario.')
+            print('ERROR: Contraseña incorrecta.')
             print('Accederás al módulo público.')
-
-
-    case 2:
+    else:
+        print('ERROR: Usuario inexistente')
         print('Accederás al módulo público.')
+
+
+else:
+    print('Accederás al módulo público.')
+
     
 if (logged_in == True):
     private_module()
 else:
     public_module()
+
+
+#-------------------------------------------
+
 
 
