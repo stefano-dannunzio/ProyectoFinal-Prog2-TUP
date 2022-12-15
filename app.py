@@ -72,3 +72,6 @@ def add_movie():
 #Borrar una pelicula - #Delete a movie
 @app.route('/borrar_pelicula', methods=['DELETE'])
 def delete_movie():
+
+
+
