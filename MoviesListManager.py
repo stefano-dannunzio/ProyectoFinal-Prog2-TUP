@@ -17,6 +17,20 @@ def private_module():
 def public_module():
     print("publico")
 
+    #Endpoint
+    URL = ""
+
+    #Request
+    r = requests.get(URL)
+
+    #Se extraen los datos de la request en formato JSON
+    data = r.json()
+    
+    #Se muestran por consola las (ultimas 10 ) peliculas agregadas
+    for i in range(1,10):
+        print(data[-i])
+        
+
 
 #--------------------------------------------------------------------
 
