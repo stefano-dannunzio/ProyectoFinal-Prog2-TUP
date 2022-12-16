@@ -85,24 +85,24 @@ def add_review():
 
 # ABM de cada pelicula
 # Agregar una pelicula - Add a movie
-@app.route('/agregar_pelicula', methods=["POST"])
-def add_movie():
-    #id += 1
+# @app.route('/agregar_pelicula', methods=["POST"])
+# def add_movie():
+#     #id += 1
 
-    new_movie = {
-        "Titulo": request.json['Titulo'], 
-        "Anio": request.json ['Anio'], 
-        "Director": request.json ['Director'], #En vez de pedirlo tendriamos que obtenerlo de la lista
-        "Genero":  request.json ['Genero'], #En vez de pedirlo tendriamos que obtenerlo de la lista
-        "Sinopsis":  request.json ['Sinopsis'], 
-        "Imagen":  request.json ['Imagen'],
-        "ID" : id + 1
-    }
+#     new_movie = {
+#         "Titulo": request.json['Titulo'], 
+#         "Anio": request.json ['Anio'], 
+#         "Director": request.json ['Director'], #En vez de pedirlo tendriamos que obtenerlo de la lista
+#         "Genero":  request.json ['Genero'], #En vez de pedirlo tendriamos que obtenerlo de la lista
+#         "Sinopsis":  request.json ['Sinopsis'], 
+#         "Imagen":  request.json ['Imagen'],
+#         "ID" : id + 1
+#     }
 
-    movies.append(new_movie)
-    id += 1
-    print(request.json)
-    return jsonify({"message":"Pelicula agregada con exito", "movies": movies})
+#     movies.append(new_movie)
+#     id += 1
+#     print(request.json)
+#     return jsonify({"message":"Pelicula agregada con exito", "movies": movies})
 
 # Modificar una pelicula
 
