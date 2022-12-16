@@ -1,8 +1,8 @@
 #Importación de módulos - Import modules
-from flask import Flask, jsonify, request
+from flask import Flask, jsonify, request, render_template
 
 #Importación de Datos - Import Data
-from users import users
+
 from movies import movies
 
 app = Flask(__name__)
@@ -36,15 +36,17 @@ print (index())
 
 
 #Autentificación usuario - Login user
-@app.route('/login/<user>', methods=['GET']) 
-def login_user(user, password):
+@app.route('/login', methods=['GET']) 
+def login_user():
+    return render_template('login.html')
 
 
 
 #Agregar una reseña - Add a review
 @app.route('/agregar_reseña', methods=['POST'])
 def add_review():
-
+    
+    return 0
 
 #ABM de cada pelicula
 #Agregar una pelicula - Add a movie
@@ -70,5 +72,8 @@ def add_movie():
 #Modificar una pelicula
 
 #Borrar una pelicula - #Delete a movie
-@app.route('/borrar_pelicula', methods=['DELETE'])
-def delete_movie():
+#@app.route('/borrar_pelicula', methods=['DELETE'])
+#def delete_movie():
+
+if __name__ == "__main__":
+    app.run(debug=True)
