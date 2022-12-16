@@ -1,9 +1,14 @@
 #Importación de módulos - Import modules
 from flask import Flask, jsonify, request, render_template
+import json
 
 #Importación de Datos - Import Data
 
 from movies import movies
+
+#Cargar el archivo users.json
+with open('users.json', 'r') as f:
+    users = json.load(f)
 
 app = Flask(__name__)
 
@@ -36,9 +41,20 @@ print (index())
 
 
 #Autentificación usuario - Login user
-@app.route('/login', methods=['GET']) 
-def login_user():
-    return render_template('login.html')
+@app.route('/login', methods=['POST'])
+def login():
+    # Obtener el usuario y la contraseña desde la request
+    username = request.form['username']
+    password = request.form['password']
+
+    # Chequear si las credenciales provistas coinciden con un usuario en la lista de usuarios
+    user = next((user for user in users if user['username'] == username and user['password'] == password), None)
+    if user:
+        # Si son validas, retornan un mensaje satisfactorio
+        return jsonify({'message': 'login successful'})
+    else:
+        # Si son invalidas, retornan un mensaje de error
+        return jsonify({'message': 'invalid username or password'}), 401
 
 
 
