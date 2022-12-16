@@ -8,52 +8,32 @@ auth = HTTPBasicAuth()
 
 # Importación de Datos - Import Data
 
-# Cargar el archivo users.json
-with open('users.json', 'r') as f:
-    users = json.load(f)
-
 # Cargar el archivo movies.json
-with open('movies.json', 'r') as f:
+with open('data/movies.json', 'r') as f:
     movies = json.load(f)
 
 # Cargar el archivo directors.json
-with open('directors.json', 'r') as f:
+with open('data/directors.json', 'r') as f:
     directors = json.load(f)
 
 # Cargar el archivo genres.json
-with open('genres.json', 'r') as f:
+with open('data/genres.json', 'r') as f:
     genres = json.load(f)
 
 #Numero de ID para peliculas
 #id = 0
 
-# Autentificación usuario - Login user
-@app.route('/login', methods=['POST'])
-def login():
-    # Obtener el usuario y la contraseña desde la request
-    username = request.form['username']
-    password = request.form['password']
-
-    # Chequear si las credenciales provistas coinciden con un usuario en la lista de usuarios
-    user = next((user for user in users if user['username'] == username and user['password'] == password), None)
-    if user:
-        # Si son validas, retornan un mensaje satisfactorio
-        return jsonify({'message': 'login successful'})
-    else:
-        # Si son invalidas, retornan un mensaje de error
-        return jsonify({'message': 'invalid username or password'}), 401
-
-# Definir una función para autenticar usuarios
 @auth.verify_password
 def verify_password(username, password):
-    # Chequear si las credenciales provistas coinciden con un usuario en la lista de usuarios
-    user = next((user for user in users if user['username'] == username and user['password'] == password), None)
-    if user:
+    with open('data/users.json') as f:
+        users = json.load(f)
+
+    if username in users and users[username] == password:
         return True
     return False
 
 # Ruta para el módulo publico
-@app.route('/public')
+@app.route('/public', methods=['POST'])
 def get_public_movies():
     # Obtener las últimas 10 películas en la lista
     public_movies = movies[-10:]
@@ -64,17 +44,19 @@ def get_public_movies():
 # Ruta para el módulo privado
 @app.route('/private', methods=['POST'])
 @auth.login_required
-def add_movie():
-    # Get the movie data from the request
-    data = request.get_json()
+# def add_movie():
+#     # Get the movie data from the request
+#     data = request.get_json()
 
-    # Chequear que los campos requeridos estan presentes
-    if 'title' not in data or 'year' not in data or 'director' not in data or 'genre' not in data:
-        return jsonify({'message': 'faltan campos requeridos'}), 400
+#     # Chequear que los campos requeridos estan presentes
+#     if 'title' not in data or 'year' not in data or 'director' not in data or 'genre' not in data:
+#         return jsonify({'message': 'faltan campos requeridos'}), 400
 
-    # Check that the director and genre are valid
-    if data['director'] not in directors or data['genre'] not in genres:
-        return jsonify({'message': 'director o género inválido/s'}), 401
+#     # Check that the director and genre are valid
+#     if data['director'] not in directors or data['genre'] not in genres:
+#         return jsonify({'message': 'director o género inválido/s'}), 401
+def private_module():
+    return jsonify({"message":"El modulo privado funciona"}), 200
 
 
 # Agregar una reseña - Add a review

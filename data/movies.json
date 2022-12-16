@@ -5,6 +5,7 @@
         "director": "James Cameron",
         "genre": "Sci-Fi",
         "synopsis": "Impressive movie.",
-        "img_url": "https://en.wikipedia.org/wiki/File:Avatar_(2009_film)_poster.jpg"
+        "img_url": "https://en.wikipedia.org/wiki/File:Avatar_(2009_film)_poster.jpg",
+        "reviews":[]
     }
 ]
