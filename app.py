@@ -104,6 +104,36 @@ def retrieve_genres():
     # Devolver los géneros en JSON
     return jsonify(genres)
 
+# Devolver las películas dirigidas por un director en particular
+@app.route('/private/movies_by/<director>')
+def get_movies_by_director(director):
+    # Checkear si el usuario está autenticado
+    if 'username' not in session:
+        return jsonify({'error': 'No autenticado'}), 401
+
+    with open('data/movies.json') as f:
+        movies = json.load(f)
+
+    movies_by_director = [movie for movie in movies if movie['director'] == director]
+
+    return jsonify(movies_by_director)
+
+# Devolver las películas que tienen una imagen de portada agregada
+@app.route('/movies/with-images')
+def get_movies_with_images():
+    # Checkear si el usuario está autenticado
+    if 'username' not in session:
+        return jsonify({'error': 'No autenticado'}), 401
+
+
+    with open('data/movies.json') as f:
+        movies = json.load(f)
+
+    movies_with_images = [movie for movie in movies if movie['img_url'] != ""]
+
+    return jsonify(movies_with_images)
+
+
 
 # Agregar una película
 @app.route('/private/add', methods=['POST'])
