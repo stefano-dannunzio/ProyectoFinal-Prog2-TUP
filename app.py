@@ -76,8 +76,36 @@ def get_public_movies():
     # Devolver las películas en JSON
     return jsonify(public_movies)
 
+# ----- MODULOS PRIVADOS ---------
 
-# Ruta para el módulo privado para agregar películas
+# Devolver lista de directores
+@app.route('/directors', methods=['GET'])
+def retrieve_directors():
+    # Checkear si el usuario está autenticado
+    if 'username' not in session:
+        return jsonify({'error': 'No autenticado'}), 401
+
+    # Abrir el directors.json
+    with open('data/directors.json', 'r') as f:
+        directors = json.load(f)
+    # Devolver los directores en JSON
+    return jsonify(directors)
+
+# Devolver lista de géneros
+@app.route('/genres', methods=['GET'])
+def retrieve_genres():
+    # Checkear si el usuario está autenticado
+    if 'username' not in session:
+        return jsonify({'error': 'No autenticado'}), 401
+
+    # Abrir el genres.json
+    with open('data/genres.json', 'r') as f:
+        genres = json.load(f)
+    # Devolver los géneros en JSON
+    return jsonify(genres)
+
+
+# Agregar una película
 @app.route('/private/add', methods=['POST'])
 def add_movie():
     # Checkear si el usuario está autenticado
