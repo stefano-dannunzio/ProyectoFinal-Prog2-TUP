@@ -1,1 +1,32 @@
-[{"title": "Avatar 3", "year": "2025", "director": "Cameron James", "genre": "Action", "synopsis": "Edited synopsis", "img_url": "edited url", "reviews": []}, {"title": "Avatar: The First Movie", "year": 2022, "director": "Cameron James", "genre": "Action", "synopsis": "New synopsis", "img_url": "http://example.com/new_image.jpg", "review": "Nueva review", "reviews": ["Nueva review"]}]
+[
+    {
+        "title": "Avatar 3", 
+        "year": "2025", 
+        "director": "Cameron James", 
+        "genre": "Action", 
+        "synopsis": "Edited synopsis", 
+        "img_url": "edited url", 
+        "reviews": []
+    }, 
+    {
+        
+        "title": "Avatar: The First Movie", 
+        "year": 2022, 
+        "director": "Cameron James", 
+        "genre": "Action", 
+        "synopsis": "New synopsis", 
+        "img_url": "http://example.com/new_image.jpg", 
+        "reviews": ["Nueva review"]
+    },
+    {
+        
+        "title": "", 
+        "year": , 
+        "director": "", 
+        "genre": "", 
+        "synopsis": "", 
+        "img_url": "", 
+        "reviews": [""]
+    }
+    
+]

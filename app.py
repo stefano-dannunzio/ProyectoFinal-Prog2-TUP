@@ -142,16 +142,54 @@ def update_movie(title):
 
 
 # Agregar una reseña - Add a review
-@app.route('/agregar_reseña', methods=['PUT'])
-def add_review():
+@app.route('/private/<string:movie>/agregar_reseña', methods=['PUT'])
+#@auth.login_required
+def add_review(movie):
+    #Cargar el archivo movies.json
+    with open('json_files/movies.json', 'r') as f:
+        movies = json.load(f)
+
+    #Solicitar la reseña al usuario para luego almacenarla en la base de datos
+    new_review =  request.json
     
-    return 0
+    #Chequeamos que la reseña no este vacia
+    if len(new_review) <= 0: 
+        return jsonify({"El campo esta vacio. Por favor escriba una reseña para cargarla"})
+    else:
+        #Recorremos la lista de diccionarios para encontrar una coincidencia en base al titulo
+        #Y agregar la reseña a ese titulo. 
+        for i in movies:
+            if i["title"] == movie:
+                i["reviews"].append(new_review)
+
+                #Devolver la base de datos actualizada
+                with open ('data/movies.json', 'w') as f:
+                    json.dump(movies, f)
+                
+        return jsonify({"message": "Reseña agregada con éxito", "movies": movies})
 
 
 
 # Borrar una pelicula - #Delete a movie
-#@app.route('/borrar_pelicula', methods=['DELETE'])
-#def delete_movie():
+@app.route('/private/<string:movie_delete>/borrar_pelicula', methods=['DELETE'])
+def delete_movie(movie_delete):
+    #Cargar el archivo movies.json
+    with open('json_files/movies.json', 'r') as f:
+        movies = json.load(f)
+
+    #Recorrer la lista de diccionarios para encontrar coincidencia con el nombre de la pelicula
+    for movie in movies:
+        if movie["title"] == movie_delete and len(movie["reviews"]) < 1:
+            movies.remove(movie)
+            
+            #Devolver la base de datos actualizada
+            with open ('data/movies.json', 'w') as f:
+                json.dump(movies, f)
+
+            return jsonify ({"message" : "Pelicula eliminada con éxito", "movies": movies})
+
+        else:
+            return jsonify ({"message" : "No se ha encontrado la pelicula o no se puede eliminar"})
 
 if __name__ == "__main__":
     app.run(debug=True)
