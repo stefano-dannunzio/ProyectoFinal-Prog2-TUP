@@ -1,11 +1,1 @@
-[
-    {
-        "title": "Avatar",
-        "year": "2009",
-        "director": "James Cameron",
-        "genre": "Sci-Fi",
-        "synopsis": "Impressive movie.",
-        "img_url": "https://en.wikipedia.org/wiki/File:Avatar_(2009_film)_poster.jpg",
-        "reviews":[]
-    }
-]
+[{"title": "Avatar 3", "year": "2025", "director": "Cameron James", "genre": "Action", "synopsis": "Edited synopsis", "img_url": "edited url", "reviews": []}, {"title": "Avatar: The First Movie", "year": 2022, "director": "Cameron James", "genre": "Action", "synopsis": "New synopsis", "img_url": "http://example.com/new_image.jpg", "review": "Nueva review", "reviews": ["Nueva review"]}]
