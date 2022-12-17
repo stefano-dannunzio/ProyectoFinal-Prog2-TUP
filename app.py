@@ -5,6 +5,22 @@ import json
 
 app = Flask(__name__)
 app.secret_key = 'tupsito'
+
+# ----- MODULOS PUBLICOS --------------------------------------
+# Ruta para el módulo publico
+@app.route('/public', methods=['GET'])
+def get_public_movies():
+    # Cargar el archivo movies.json
+    with open('data/movies.json', 'r') as f:
+        movies = json.load(f)
+    # Obtener las últimas 10 películas en la lista
+    public_movies = movies[-10:]
+    # Devolver las películas en JSON
+    return jsonify(public_movies)
+
+
+# ----- AUTENTIFICACION DEL USUARIO PARA EL MODULO PRIVADO ---------
+
 # auth = HTTPBasicAuth()
 
 # @auth.verify_password
@@ -64,26 +80,14 @@ def register():
 
     return 'Registrado con éxito', 201
 
-
-# Ruta para el módulo publico
-@app.route('/public', methods=['GET'])
-def get_public_movies():
-    # Cargar el archivo movies.json
-    with open('data/movies.json', 'r') as f:
-        movies = json.load(f)
-    # Obtener las últimas 10 películas en la lista
-    public_movies = movies[-10:]
-    # Devolver las películas en JSON
-    return jsonify(public_movies)
-
-# ----- MODULOS PRIVADOS ---------
+# ----- MODULOS PRIVADOS ------------------------------------
 
 # Devolver lista de directores
 @app.route('/directors', methods=['GET'])
 def retrieve_directors():
     # Checkear si el usuario está autenticado
     if 'username' not in session:
-        return jsonify({'error': 'No autenticado'}), 401
+        return jsonify({'error': 'No autenticado. Debe iniciar sesión o registrarse.'}), 401
 
     # Abrir el directors.json
     with open('data/directors.json', 'r') as f:
@@ -96,7 +100,7 @@ def retrieve_directors():
 def retrieve_genres():
     # Checkear si el usuario está autenticado
     if 'username' not in session:
-        return jsonify({'error': 'No autenticado'}), 401
+        return jsonify({'error': 'No autenticado. Debe iniciar sesión o registrarse.'}), 401
 
     # Abrir el genres.json
     with open('data/genres.json', 'r') as f:
@@ -109,7 +113,7 @@ def retrieve_genres():
 def get_movies_by_director(director):
     # Checkear si el usuario está autenticado
     if 'username' not in session:
-        return jsonify({'error': 'No autenticado'}), 401
+        return jsonify({'error': 'No autenticado. Debe iniciar sesión o registrarse.'}), 401
 
     with open('data/movies.json') as f:
         movies = json.load(f)
@@ -119,11 +123,11 @@ def get_movies_by_director(director):
     return jsonify(movies_by_director)
 
 # Devolver las películas que tienen una imagen de portada agregada
-@app.route('/movies/with-images')
+@app.route('/private/movies/with-images')
 def get_movies_with_images():
     # Checkear si el usuario está autenticado
     if 'username' not in session:
-        return jsonify({'error': 'No autenticado'}), 401
+        return jsonify({'error': 'No autenticado. Debe iniciar sesión o registrarse.'}), 401
 
 
     with open('data/movies.json') as f:
@@ -133,14 +137,12 @@ def get_movies_with_images():
 
     return jsonify(movies_with_images)
 
-
-
 # Agregar una película
 @app.route('/private/add', methods=['POST'])
 def add_movie():
     # Checkear si el usuario está autenticado
     if 'username' not in session:
-        return jsonify({'error': 'No autenticado'}), 401
+        return jsonify({'error': 'No autenticado. Debe iniciar sesión o registrarse.'}), 401
 
     # Obtener la información de la película desde la request
     movie_data = request.get_json()
@@ -182,15 +184,13 @@ def add_movie():
 
     return jsonify({'message': 'Película agregada correctamente'}), 201
 
-
-
 # Modificar una pelicula
 @app.route('/private/modify/<string:title>', methods=['PUT'])
 def update_movie(title):
 
     # Checkear si el usuario está autenticado
     if 'username' not in session:
-        return jsonify({'error': 'No autenticado'}), 401
+        return jsonify({'error': 'No autenticado. Debe iniciar sesión o registrarse.'}), 401
     
     # Obtener los datos de la request
     movie_data = request.get_json()
@@ -230,15 +230,13 @@ def update_movie(title):
 
     return jsonify({'message': 'Pelicula modificada satisfactoriamente'}), 200
 
-
-
 # Agregar una reseña - Add a review
 @app.route('/private/<string:movie>/agregar_reseña', methods=['PUT'])
 def add_review(movie):
 
     # Checkear si el usuario está autenticado
     if 'username' not in session:
-        return jsonify({'error': 'No autenticado'}), 401
+        return jsonify({'error': 'No autenticado. Debe iniciar sesión o registrarse.'}), 401
 
     #Cargar el archivo movies.json
     with open('json_files/movies.json', 'r') as f:
@@ -263,15 +261,13 @@ def add_review(movie):
                 
         return jsonify({"message": "Reseña agregada con éxito", "movies": movies})
 
-
-
 # Borrar una pelicula - #Delete a movie
 @app.route('/private/<string:movie_delete>/borrar_pelicula', methods=['DELETE'])
 def delete_movie(movie_delete):
 
     # Checkear si el usuario está autenticado
     if 'username' not in session:
-        return jsonify({'error': 'No autenticado'}), 401
+        return jsonify({'error': 'No autenticado. Debe iniciar sesión o registrarse.'}), 401
 
     #Cargar el archivo movies.json
     with open('data/movies.json', 'r') as f:

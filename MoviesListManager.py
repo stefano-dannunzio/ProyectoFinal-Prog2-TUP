@@ -40,12 +40,13 @@ print("Por Marcia B. Álvarez, Stefano D'Annunzio y Pamela Dominguez")
 
 #Menu de Autenticación
 logged_in = False
+print('Bienvenidx al programa PelisPedia!')
 print('¿Cómo quiere acceder al programa?')
 print('---------------------------------')
 print('1. COMO USUARIO REGISTRADO')
 print('2. COMO INVITADO (Módulo público)')
 print('---------------------------------')
-option = int(input('Elija una opción: '))
+option = int(input('Elija una opción y presione enter: '))
 
 if option == 1:
     
@@ -69,9 +70,10 @@ if option == 1:
         print('ERROR: Usuario inexistente')
         print('Accederás al módulo público.')
 
-
 else:
-    print('Accederás al módulo público.')
+    print('Accederás al módulo público. Enter para continuar...')
+    
+    #Limpiar la consola
 
     
 if (logged_in == True):
