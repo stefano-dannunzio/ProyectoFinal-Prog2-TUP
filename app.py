@@ -1,23 +1,37 @@
 # Importación de módulos - Import modules
-from flask import Flask, jsonify, request, render_template
-from flask_httpauth import HTTPBasicAuth
+from flask import Flask, jsonify, request, render_template, session
+# from flask_httpauth import HTTPBasicAuth
 import json
 
 app = Flask(__name__)
-auth = HTTPBasicAuth()
+app.secret_key = 'tupsito'
+# auth = HTTPBasicAuth()
 
-# Importación de Datos - Import Data
+# @auth.verify_password
+# def verify_password(username, password):
+#     with open('data/users.json') as f:
+#         users = json.load(f)
 
-# Cargar el archivo movies.json
+#     if username in users and users[username] == password:
+#         return True
+#     return False
 
-@auth.verify_password
-def verify_password(username, password):
-    with open('data/users.json') as f:
+@app.route('/login', methods=['POST'])
+def login():
+    # Obtiene el usuario y contraseña de la request
+    login_data = request.get_json()
+    username = login_data['username']
+    password = login_data['password']
+
+    # Verificar el usuario y contraseña
+    with open('data/users.json', 'r') as f:
         users = json.load(f)
-
     if username in users and users[username] == password:
-        return True
-    return False
+        # Guardar el username del usuario autenticado en la session
+        session['username'] = username
+        return jsonify({'message': 'Login satisfactorio'})
+    else:
+        return jsonify({'error': 'Usuario o contraseña invalido/a'}), 401
 
 # Ruta para el módulo publico
 @app.route('/public', methods=['GET'])
@@ -34,6 +48,10 @@ def get_public_movies():
 # Ruta para el módulo privado para agregar películas
 @app.route('/private/add', methods=['POST'])
 def add_movie():
+    # Checkear si el usuario está autenticado
+    if 'username' not in session:
+        return jsonify({'error': 'No autenticado'}), 401
+
     # Obtener la información de la película desde la request
     movie_data = request.get_json()
 
@@ -78,6 +96,11 @@ def add_movie():
 # Modificar una pelicula
 @app.route('/private/modify/<string:title>', methods=['PUT'])
 def update_movie(title):
+
+    # Checkear si el usuario está autenticado
+    if 'username' not in session:
+        return jsonify({'error': 'No autenticado'}), 401
+    
     # Obtener los datos de la request
     movie_data = request.get_json()
 
@@ -119,7 +142,7 @@ def update_movie(title):
 
 
 # Agregar una reseña - Add a review
-@app.route('/agregar_reseña', methods=['POST'])
+@app.route('/agregar_reseña', methods=['PUT'])
 def add_review():
     
     return 0
