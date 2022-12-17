@@ -1,6 +1,5 @@
 # Importación de módulos - Import modules
 from flask import Flask, jsonify, request, render_template, session
-# from flask_httpauth import HTTPBasicAuth
 import json
 
 app = Flask(__name__)
@@ -17,20 +16,10 @@ def get_public_movies():
     public_movies = movies[-10:]
     # Devolver las películas en JSON
     return jsonify(public_movies)
+#----------------------------------------------------------------------------------------------------
 
 
 # ----- AUTENTIFICACION DEL USUARIO PARA EL MODULO PRIVADO ---------
-
-# auth = HTTPBasicAuth()
-
-# @auth.verify_password
-# def verify_password(username, password):
-#     with open('data/users.json') as f:
-#         users = json.load(f)
-
-#     if username in users and users[username] == password:
-#         return True
-#     return False
 
 @app.route('/login', methods=['POST'])
 def login():
@@ -48,12 +37,14 @@ def login():
         return jsonify({'message': 'Login con éxito'})
     else:
         return jsonify({'error': 'Usuario o contraseña invalido/a'}), 401
+#----------------------------------------------------------------------------------------------------
 
 @app.route('/logout', methods=['POST'])
 def logout():
     # Limpia la variable de session "username"
     session.pop('username', None)
     return 'Log out satisfactorio', 200
+#----------------------------------------------------------------------------------------------------
 
 
 @app.route('/register', methods=['POST'])
@@ -79,6 +70,7 @@ def register():
         json.dump(users, f)
 
     return 'Registrado con éxito', 201
+#----------------------------------------------------------------------------------------------------
 
 # ----- MODULOS PRIVADOS ------------------------------------
 
@@ -94,6 +86,7 @@ def retrieve_directors():
         directors = json.load(f)
     # Devolver los directores en JSON
     return jsonify(directors)
+#----------------------------------------------------------------------------------------------------
 
 # Devolver lista de géneros
 @app.route('/genres', methods=['GET'])
@@ -107,6 +100,7 @@ def retrieve_genres():
         genres = json.load(f)
     # Devolver los géneros en JSON
     return jsonify(genres)
+#----------------------------------------------------------------------------------------------------
 
 # Devolver las películas dirigidas por un director en particular
 @app.route('/private/movies_by/<director>')
@@ -121,6 +115,7 @@ def get_movies_by_director(director):
     movies_by_director = [movie for movie in movies if movie['director'] == director]
 
     return jsonify(movies_by_director)
+#----------------------------------------------------------------------------------------------------
 
 # Devolver las películas que tienen una imagen de portada agregada
 @app.route('/private/movies/with-images')
@@ -136,6 +131,7 @@ def get_movies_with_images():
     movies_with_images = [movie for movie in movies if movie['img_url'] != ""]
 
     return jsonify(movies_with_images)
+#----------------------------------------------------------------------------------------------------
 
 # Agregar una película
 @app.route('/private/add', methods=['POST'])
@@ -183,6 +179,7 @@ def add_movie():
         json.dump(movies, f)
 
     return jsonify({'message': 'Película agregada correctamente'}), 201
+#----------------------------------------------------------------------------------------------------
 
 # Modificar una pelicula
 @app.route('/private/modify/<string:title>', methods=['PUT'])
@@ -229,6 +226,7 @@ def update_movie(title):
         json.dump(movies, f)
 
     return jsonify({'message': 'Pelicula modificada satisfactoriamente'}), 200
+#----------------------------------------------------------------------------------------------------
 
 # Agregar una reseña - Add a review
 @app.route('/private/<string:movie>/agregar_reseña', methods=['PUT'])
@@ -260,6 +258,7 @@ def add_review(movie):
                     json.dump(movies, f)
                 
         return jsonify({"message": "Reseña agregada con éxito", "movies": movies})
+#----------------------------------------------------------------------------------------------------
 
 # Borrar una pelicula - #Delete a movie
 @app.route('/private/<string:movie_delete>/borrar_pelicula', methods=['DELETE'])
@@ -286,6 +285,7 @@ def delete_movie(movie_delete):
 
         else:
             return jsonify ({"message" : "No se ha encontrado la pelicula o no se puede eliminar"})
+#----------------------------------------------------------------------------------------------------
 
 if __name__ == "__main__":
     app.run(debug=True)
