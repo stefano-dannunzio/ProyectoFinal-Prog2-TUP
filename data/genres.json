@@ -1,10 +1,18 @@
 [
-    "Sci-Fi",
-    "Action",
+    "Accion",
+    "Animación",
+    "Comedia dramatica",
     "Drama",
+    "Fantastico",
+    "Historico",
     "Horror",
-    "Suspense",
-    "Crimes",
-    "Belic",
-    "Musical"
+    "Comedia",
+    "Crimen",
+    "Musical",
+    "Romance",
+    "Satira",
+    "Sci-Fi",
+    "Suspenso",
+    "Terror",
+    "Thriller"
 ]
