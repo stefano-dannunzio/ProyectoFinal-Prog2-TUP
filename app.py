@@ -29,9 +29,41 @@ def login():
     if username in users and users[username] == password:
         # Guardar el username del usuario autenticado en la session
         session['username'] = username
-        return jsonify({'message': 'Login satisfactorio'})
+        return jsonify({'message': 'Login con éxito'})
     else:
         return jsonify({'error': 'Usuario o contraseña invalido/a'}), 401
+
+@app.route('/logout', methods=['POST'])
+def logout():
+    # Limpia la variable de session "username"
+    session.pop('username', None)
+    return 'Log out satisfactorio', 200
+
+
+@app.route('/register', methods=['POST'])
+def register():
+    # Obtener datos de la request
+    data = request.get_json()
+    username = data['username']
+    password = data['password']
+
+    # Leer el users.json
+    with open('data/users.json', 'r') as f:
+        users = json.load(f)
+
+    # Checkear si el nombre de usuario ya esta en uso
+    if username in users:
+        return 'Nombre de usuario ya en uso', 400
+
+    # Añadir el usuario a la base de datos
+    users[username] = password
+
+    # Escribir la lista actualizada de usuarios al users.json
+    with open('data/users.json', 'w') as f:
+        json.dump(users, f)
+
+    return 'Registrado con éxito', 201
+
 
 # Ruta para el módulo publico
 @app.route('/public', methods=['GET'])
@@ -85,6 +117,7 @@ def add_movie():
     # como primer elemento de la lista de reviews
     if not movie_added:
         movie_data['reviews'] = [movie_data['review']]
+        del movie_data['review']
         movies.append(movie_data)
     with open('data/movies.json', 'w') as f:
         json.dump(movies, f)
@@ -143,8 +176,12 @@ def update_movie(title):
 
 # Agregar una reseña - Add a review
 @app.route('/private/<string:movie>/agregar_reseña', methods=['PUT'])
-#@auth.login_required
 def add_review(movie):
+
+    # Checkear si el usuario está autenticado
+    if 'username' not in session:
+        return jsonify({'error': 'No autenticado'}), 401
+
     #Cargar el archivo movies.json
     with open('json_files/movies.json', 'r') as f:
         movies = json.load(f)
@@ -173,8 +210,13 @@ def add_review(movie):
 # Borrar una pelicula - #Delete a movie
 @app.route('/private/<string:movie_delete>/borrar_pelicula', methods=['DELETE'])
 def delete_movie(movie_delete):
+
+    # Checkear si el usuario está autenticado
+    if 'username' not in session:
+        return jsonify({'error': 'No autenticado'}), 401
+
     #Cargar el archivo movies.json
-    with open('json_files/movies.json', 'r') as f:
+    with open('data/movies.json', 'r') as f:
         movies = json.load(f)
 
     #Recorrer la lista de diccionarios para encontrar coincidencia con el nombre de la pelicula
