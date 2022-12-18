@@ -41,9 +41,12 @@ def login():
 
 @app.route('/logout', methods=['POST'])
 def logout():
+    # Checkear si el usuario está autenticado
+    if 'username' not in session:
+        return jsonify({'error': 'No autenticado. Debe iniciar sesión o registrarse.'}), 401
     # Limpia la variable de session "username"
     session.pop('username', None)
-    return 'Log out satisfactorio', 200
+    return jsonify({'message':'Log out satisfactorio'}), 200
 #----------------------------------------------------------------------------------------------------
 
 
@@ -75,7 +78,7 @@ def register():
 # ----- MODULOS PRIVADOS ------------------------------------
 
 # Devolver lista de directores
-@app.route('/directors', methods=['GET'])
+@app.route('/private/directors', methods=['GET'])
 def retrieve_directors():
     # Checkear si el usuario está autenticado
     if 'username' not in session:
@@ -89,7 +92,7 @@ def retrieve_directors():
 #----------------------------------------------------------------------------------------------------
 
 # Devolver lista de géneros
-@app.route('/genres', methods=['GET'])
+@app.route('/private/genres', methods=['GET'])
 def retrieve_genres():
     # Checkear si el usuario está autenticado
     if 'username' not in session:
@@ -166,9 +169,7 @@ def add_movie():
     # Si la película ya se encuentra en la lista, simplemente se agrega la review a la lista de reviews
     for i, movie in enumerate(movies):
         if movie['title'] == movie_data['title'] and movie['year'] == movie_data['year']:
-            movies[i]['reviews'].append(movie_data['review'])
-            movie_added = True
-            break
+            return 'La pelicula ya existe', 400
     # Si la película no se encuentra, se añade correctamente y se agrega la review
     # como primer elemento de la lista de reviews
     if not movie_added:
@@ -220,6 +221,7 @@ def update_movie(title):
             movies[i]['synopsis'] = movie_data['synopsis']
             movies[i]['img_url'] = movie_data['img_url']
             break
+
     else:
         return jsonify({'error': 'Película no encontrada'}), 404
     with open('data/movies.json', 'w') as f:
@@ -237,7 +239,7 @@ def add_review(movie):
         return jsonify({'error': 'No autenticado. Debe iniciar sesión o registrarse.'}), 401
 
     #Cargar el archivo movies.json
-    with open('json_files/movies.json', 'r') as f:
+    with open('data/movies.json', 'r') as f:
         movies = json.load(f)
 
     #Solicitar la reseña al usuario para luego almacenarla en la base de datos
@@ -263,6 +265,7 @@ def add_review(movie):
 # Borrar una pelicula - #Delete a movie
 @app.route('/private/<string:movie_delete>/borrar_pelicula', methods=['DELETE'])
 def delete_movie(movie_delete):
+    print(movie_delete)
 
     # Checkear si el usuario está autenticado
     if 'username' not in session:
@@ -281,10 +284,8 @@ def delete_movie(movie_delete):
             with open ('data/movies.json', 'w') as f:
                 json.dump(movies, f)
 
-            return jsonify ({"message" : "Pelicula eliminada con éxito", "movies": movies})
+            return jsonify ({"message" : "Pelicula eliminada con éxito", "movies": movies}), 200
 
-        else:
-            return jsonify ({"message" : "No se ha encontrado la pelicula o no se puede eliminar"})
 #----------------------------------------------------------------------------------------------------
 
 if __name__ == "__main__":
