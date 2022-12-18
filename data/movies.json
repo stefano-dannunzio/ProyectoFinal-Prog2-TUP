@@ -12,16 +12,13 @@
     ]
   },
   {
-    "title": "Psicosis xdxd",
-    "year": "2022",
-    "director": "Anderson Wes",
-    "genre": "Sci-Fi",
-    "synopsis": "xdxd",
-    "img_url": "xdxd",
-    "reviews": [
-      "una obra maestra del cine",
-      "Una gran trama y escenas inolvidables."
-    ]
+    "title": "Psicosis", 
+    "year": 1960, 
+    "director": "Hitchcock Alfred", 
+    "genre": "Terror", 
+    "synopsis": "En Psicosis, una joven (Janet Leigh) roba una pequeña suma de dinero de su trabajo y emprende la huida. Por el camino se refugia para pasar la noche en un lúgubre motel de carretera atendido por un joven encantador llamado Norman Bates. De repente, es asesinada. Un detective emprende su búsqueda, alertado por los dueños del dinero que robó.", 
+    "img_url": "https://encrypted-tbn1.gstatic.com/images?q=tbn:ANd9GcRicca1uD1bCkKQF3FqdlhTpxRnsetHxLWfQPXU8B1Mt-uqXYHr", 
+    "reviews": ["una obra maestra del cine", "Una gran trama y escenas inolvidables."]
   },
   {
     "title": "El viaje de Chihiro",

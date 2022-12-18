@@ -135,6 +135,149 @@ def user_menu():
     
 # --------------------------------------------------------------------
 #ABM
+''' ALTA DE UNA PELICULA '''
+def add_movie(new_title, new_year, new_director, new_genre, new_synopsis, new_img_url=None, new_review=None):
+
+    new_movie = {"title": new_title, "year": new_year, "director": new_director, "genre": new_genre, "synopsis": new_synopsis, "img_url": new_img_url, "review": new_review}
+    response = requests.post("http://localhost:5000/private/add", json=new_movie, cookies=COOKIE)
+    if response.status_code == 200:
+        return ("Pelicula agregada con éxito")
+    else:
+        return ("Algo ha salido mal... intente nuevamente")
+
+''' MODIFICACION DE UNA PELICULA '''
+def update_movie(title_tobe_modified, modified_title, modified_year, modified_director, modified_genre, modified_synopsis, modified_img_url):
+    global COOKIE
+
+    updated_movie = {"title": modified_title, "year": modified_year, "director": modified_director, "genre": modified_genre, "synopsis": modified_synopsis, "img_url": modified_img_url}
+
+    direction = (f"http://localhost:5000/private/modify/{title_tobe_modified}")
+    response = requests.put(direction, json = updated_movie, cookies = COOKIE)
+
+    if response.status_code == 200:
+        return ("Pelicula modificada con éxito")
+    else:
+        return ("Algo ha salido mal... intente nuevamente")
+
+''' BAJA DE UNA PELICULA '''
+def delete_movie(movie_tobe_deleted):
+
+    direction = (f'http://localhost:5000/private/{movie_tobe_deleted}/borrar_pelicula')
+    print(direction)
+    response = requests.delete(direction, cookies=COOKIE)
+    if response.status_code == 200:
+        return ("Pelicula eliminada con éxito")
+    else:
+        return ("Algo ha salido mal... intente nuevamente")
+# --------------------------------------------------------------------
+# AGREGAR UNA RESEÑA
+def add_review(movie, new_review):
+    global COOKIE
+
+    direction = (f'http://localhost:5000/private/{movie}/agregar_reseña')
+    response = requests.put(direction, json=new_review, cookies=COOKIE)
+    if response.status_code == 200:
+        return ("Reseña agregada con éxito")
+    else:
+        return ("Algo ha salido mal... intente nuevamente")
+
+# --------------------------------------------------------------------
+# DEVOLVER LISTA POR DIRECTOR ESPECIFICO
+def get_movies_by_director(director):
+    global COOKIE
+
+    direction = (f'http://localhost:5000/private/movies_by/{director}')
+    
+    movies_by_director = (requests.get(direction, cookies=COOKIE)).json()
+    
+    print(f"La lista de peliculas del/la director/a {director} es:")
+    contador_peliculas=1
+    for movie in movies_by_director:
+            print(f"{contador_peliculas}:")
+            print(f"   Título : {movie['title']}")
+            print(f"   Año de publicación : {movie['year']}")
+            print(f"   Director : {movie['director']}")
+            print(f"   Género : {movie['genre']}")
+            print(f"   Sinopsis : {movie['synopsis']}")
+
+            if len(movie['img_url']) > 0:
+                print(f"   Link a imágen de la portada : {movie['img_url']}")
+            else: 
+                print(f"   Esta pelicula no cuenta con un link a una imagen de portada")
+            
+            if len(movie['reviews']) > 0:
+                print(f"   Reseñas :")
+                contadorReseñas = 1
+                for review in movie['reviews']:
+                    print(f"Reseñas {contadorReseñas}: {review}")
+                    contadorReseñas += 1
+            else:
+                print (f"Esta pelicula no cuenta con reseñas aún.")
+            
+            contador_peliculas += 1
+            print("--------------------------------------------")
+
+# --------------------------------------------------------------------
+# DEVOLVER LISTA DE PELICULAS CON PORTADA
+def get_movies_with_poster():
+    global COOKIE
+    
+    movies_with_poster = (requests.get('http://localhost:5000/private/movies/with-images', cookies=COOKIE)).json()
+    
+    print(f"Lista de peliculas con un poster cargado:")
+    contador_peliculas=1
+    for movie in movies_with_poster:
+            print(f"{contador_peliculas}:")
+            print(f"   Título : {movie['title']}")
+            print(f"   Año de publicación : {movie['year']}")
+            print(f"   Director : {movie['director']}")
+            print(f"   Género : {movie['genre']}")
+            print(f"   Sinopsis : {movie['synopsis']}")
+            print(f"   Link a imágen de la portada : {movie['img_url']}")
+
+            # if len(movie['img_url']) > 0:
+            #     print(f"   Link a imágen de la portada : {movie['img_url']}")
+            # else: 
+            #     print(f"   Esta pelicula no cuenta con un link a una imagen de portada")
+            
+            if len(movie['reviews']) > 0:
+                print(f"   Reseñas :")
+                contadorReseñas = 1
+                for review in movie['reviews']:
+                    print(f"Reseñas {contadorReseñas}: {review}")
+                    contadorReseñas += 1
+            else:
+                print (f"Esta pelicula no cuenta con reseñas aún.")
+            
+            contador_peliculas += 1
+            print("--------------------------------------------")
+
+# --------------------------------------------------------------------
+# DEVOLVER LISTA DE DIRECTORES
+def directors_list():
+    global COOKIE
+    
+    directors = (requests.get('http://localhost:5000/private/directors', cookies=COOKIE)).json()
+    
+    print(f"Lista de directores:")
+    contador_directores=1
+    for director in directors:
+            print(f"{contador_directores}. {director}")
+            contador_directores += 1
+
+# --------------------------------------------------------------------
+# DEVOLVER LISTA DE GENEROS
+def genres_list():
+    global COOKIE
+    
+    genres = (requests.get('http://localhost:5000/private/genres', cookies=COOKIE)).json()
+    
+    print(f"Lista de generos:")
+    contador=1
+    for genre in genres:
+            print(f"{contador}. {genre}")
+            contador += 1
+
 # --------------------------------------------------------------------
 
 #Mensaje de bienvenida
