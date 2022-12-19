@@ -142,6 +142,8 @@ def add_movie(new_title, new_year, new_director, new_genre, new_synopsis, new_im
     response = requests.post("http://localhost:5000/private/add", json=new_movie, cookies=COOKIE)
     if response.status_code == 200:
         return ("Pelicula agregada con éxito")
+    elif response.status_code == 401:
+        return ("No autorizado")
     else:
         return ("Algo ha salido mal... intente nuevamente")
 
@@ -154,8 +156,10 @@ def update_movie(title_tobe_modified, modified_title, modified_year, modified_di
     direction = (f"http://localhost:5000/private/modify/{title_tobe_modified}")
     response = requests.put(direction, json = updated_movie, cookies = COOKIE)
 
-    if response.status_code == 200:
+    if response.status_code == 201:
         return ("Pelicula modificada con éxito")
+    elif response.status_code == 401:
+        return ("No autorizado")
     else:
         return ("Algo ha salido mal... intente nuevamente")
 
@@ -167,6 +171,8 @@ def delete_movie(movie_tobe_deleted):
     response = requests.delete(direction, cookies=COOKIE)
     if response.status_code == 200:
         return ("Pelicula eliminada con éxito")
+    elif response.status_code == 401:
+        return ("No autorizado")
     else:
         return ("Algo ha salido mal... intente nuevamente")
 # --------------------------------------------------------------------
@@ -176,10 +182,12 @@ def add_review(movie, new_review):
 
     direction = (f'http://localhost:5000/private/{movie}/agregar_reseña')
     response = requests.put(direction, json=new_review, cookies=COOKIE)
-    if response.status_code == 200:
+    if response.status_code == 201:
         return ("Reseña agregada con éxito")
-    else:
-        return ("Algo ha salido mal... intente nuevamente")
+    elif response.status_code == 400:
+        return ("El campo esta vacio. Por favor escriba una reseña para cargarla")
+    elif response.status_code == 401:
+        return ("No autorizado")
 
 # --------------------------------------------------------------------
 # DEVOLVER LISTA POR DIRECTOR ESPECIFICO
@@ -187,8 +195,11 @@ def get_movies_by_director(director):
     global COOKIE
 
     direction = (f'http://localhost:5000/private/movies_by/{director}')
-    
-    movies_by_director = (requests.get(direction, cookies=COOKIE)).json()
+    response = requests.get(direction, cookies=COOKIE)
+    if response.status_code == 401:
+        return("No autorizado")
+    movies_by_director = response.json()
+
     
     print(f"La lista de peliculas del/la director/a {director} es:")
     contador_peliculas=1
@@ -221,8 +232,12 @@ def get_movies_by_director(director):
 # DEVOLVER LISTA DE PELICULAS CON PORTADA
 def get_movies_with_poster():
     global COOKIE
+    response = requests.get('http://localhost:5000/private/movies/with-images', cookies=COOKIE)
     
-    movies_with_poster = (requests.get('http://localhost:5000/private/movies/with-images', cookies=COOKIE)).json()
+    if response.status_code == 401:
+        return("No autorizado")
+    
+    movies_with_poster = response.json()
     
     print(f"Lista de peliculas con un poster cargado:")
     contador_peliculas=1
@@ -256,8 +271,10 @@ def get_movies_with_poster():
 # DEVOLVER LISTA DE DIRECTORES
 def directors_list():
     global COOKIE
-    
-    directors = (requests.get('http://localhost:5000/private/directors', cookies=COOKIE)).json()
+    response = requests.get('http://localhost:5000/private/directors', cookies=COOKIE)
+    if response.status_code == 401:
+        return("No autorizado")
+    directors = response.json()
     
     print(f"Lista de directores:")
     contador_directores=1
@@ -269,8 +286,10 @@ def directors_list():
 # DEVOLVER LISTA DE GENEROS
 def genres_list():
     global COOKIE
-    
-    genres = (requests.get('http://localhost:5000/private/genres', cookies=COOKIE)).json()
+    response = requests.get('http://localhost:5000/private/genres', cookies=COOKIE)
+    if response.status_code == 401:
+        return ("No autorizado")
+    genres = response.json()
     
     print(f"Lista de generos:")
     contador=1
