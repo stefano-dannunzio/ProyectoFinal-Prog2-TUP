@@ -193,9 +193,19 @@ def update_movie(title):
     # Obtener los datos de la request
     movie_data = request.get_json()
 
+    #Traer la base de datos de las peliculas
+    with open('data/movies.json', 'r') as f:
+        movies = json.load(f)
+
     # Checkear que todos los datos estan presentes
     if 'year' not in movie_data or 'director' not in movie_data or 'genre' not in movie_data or 'synopsis' not in movie_data or 'img_url' not in movie_data:
         return jsonify({'error': 'Falta/n campo/s requerido/s'}), 400
+    
+    #Checkear que no tenga reseñas
+    for movie in movies:
+        if len(movie["reviews"]) > 0:
+            print(len(movie["reviews"]))
+            return jsonify({'error': 'No puede modificar una pelicula con reseñas cargadas'}), 400
 
     # Obtener las listas de directores y géneros
     with open('data/directors.json', 'r') as f:
@@ -210,8 +220,6 @@ def update_movie(title):
         return jsonify({'error': 'Género inválido'}), 400
 
     # Actualizar la película en la lista
-    with open('data/movies.json', 'r') as f:
-        movies = json.load(f)
     for i, movie in enumerate(movies):
         if movie['title'] == title:
             movies[i]['title'] = movie_data['title']
@@ -254,12 +262,13 @@ def add_review(movie):
         for i in movies:
             if i["title"] == movie:
                 i["reviews"].append(new_review)
+                modified_movie = i
 
                 #Devolver la base de datos actualizada
                 with open ('data/movies.json', 'w') as f:
                     json.dump(movies, f)
                 
-        return jsonify({"message": "Reseña agregada con éxito", "movies": movies}), 201
+        return jsonify({"message": "Reseña agregada con éxito", "movie": modified_movie}), 201
 #----------------------------------------------------------------------------------------------------
 
 # Borrar una pelicula - #Delete a movie
@@ -285,6 +294,13 @@ def delete_movie(movie_delete):
                 json.dump(movies, f)
 
             return jsonify ({"message" : "Pelicula eliminada con éxito", "movies": movies}), 200
+        
+        elif movie["title"] == movie_delete and len(movie["reviews"]) > 0:
+            return jsonify ({"message" : "No se puede eliminar esta pelicula porque tiene reseñas"}), 400
+        
+    return jsonify ({"message" : "No se encuentra el titulo"}), 400
+
+
 
 #----------------------------------------------------------------------------------------------------
 
