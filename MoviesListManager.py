@@ -38,7 +38,7 @@ def register(username, password):
     if response.status_code == 200:
         print('Te has registrado satisfactoriamente')
     else:
-        print
+        print('Ha ocurrido un error')
 
 # --------------------------------------------------------------------
 
@@ -73,17 +73,44 @@ def user_menu():
                         print (f"No puede continuar sin ingresar una pelicula")
                 
                 new_year=""
-                new_year = str(input("Año de lanzamiento: "))
+                while len(new_year) <= 0:
+                    new_year = str(input("Año de lanzamiento: "))
+                    if len(new_year) <= 0:
+                        print (f"No puede continuar sin ingresar un año de lanzamiento")
+
                 new_director=""
-                new_director = str(input("Director de la pelicula (Formato 'Apellido Nombre') según figura en la lista: "))
+                while len(new_director) <= 0:
+                    new_director = str(input("Director de la pelicula (Formato 'Apellido Nombre') según figura en la lista: "))
+                    if len(new_director) <= 0:
+                        print (f"No puede continuar sin ingresar un director")
+
                 new_genre=""
-                new_genre = str(input("Género (se acepta sólo uno, ingrese el más representativo de la lista): "))
+                while len(new_genre) <= 0:
+                    new_genre = str(input("Género (se acepta sólo uno, ingrese el más representativo de la lista): "))
+                    if len(new_genre) <= 0:
+                        print (f"No puede continuar sin ingresar un genero")
+
                 new_synopsis=""
-                new_synopsis = str(input("Sinopsis: "))  
-                new_img_url = str(input("URL a una imagen de la portada (*opcional): "))
-                new_reviews = str(input("Reseña (*opcional): "))
+                while len(new_synopsis) <= 0:
+                    new_synopsis = str(input("Sinopsis: "))
+                    if len(new_synopsis) <= 0:
+                        print (f"No puede continuar sin ingresar una sinopsis")
+
+                new_img_url = ""
+                while len(new_img_url) <= 0:
+                    new_img_url = str(input("Link de la imagen: "))
+                    if len(new_img_url) <= 0:
+                        print (f"No puede continuar sin ingresar una imagen")
+
+                new_reviews = str(input("Reseña: "))
+                while len(new_reviews) <= 0:
+                    new_reviews = str(input("Reseña: "))
+                    if len(new_reviews) <= 0:
+                        print (f"No puede continuar sin ingresar una reseña")
                 
                 print(add_movie(new_title, new_year, new_director, new_genre, new_synopsis, new_img_url, new_reviews))
+                input("Presione enter para continuar... ")
+
                 
             case 2:
                 title_tobe_modified = input("¿Que pelicula desea modificar? Ingrese el titulo:")
@@ -96,42 +123,74 @@ def user_menu():
                     if len(modified_title) <= 0:
                         print (f"No puede continuar sin ingresar una pelicula")
                 
-            
-                modified_year = str(input("Año de lanzamiento: "))
-                modified_director = str(input("Director de la pelicula (Formato 'Apellido Nombre') según figura en la lista: "))
-                modified_genre = str(input("Género (se acepta sólo uno, ingrese el más representativo de la lista): "))
-                modified_synopsis = str(input("Sinopsis: "))
+                modified_year = ""
+                while len(modified_year) <= 0:
+                    modified_year = str(input("Año de lanzamiento: "))
+                    if len(modified_year) <= 0:
+                        print (f"No puede continuar sin ingresar un año de lanzamiento")
+
+                modified_director = ""
+                while len(modified_director) <= 0:
+                    modified_director = str(input("Director de la pelicula (Formato 'Apellido Nombre') según figura en la lista: "))
+                    if len(modified_director) <= 0:
+                        print (f"No puede continuar sin ingresar un director")
+                
+                modified_genre = ""
+                while len(modified_genre) <= 0:
+                    modified_genre = str(input("Género (se acepta sólo uno, ingrese el más representativo de la lista): "))
+                    if len(modified_genre) <= 0:
+                        print (f"No puede continuar sin ingresar un genero")
+                
+                modified_synopsis = ""
+                while len(modified_synopsis) <= 0:
+                    modified_synopsis = str(input("Sinopsis: "))
+                    if len(modified_synopsis) <= 0:
+                        print (f"No puede continuar sin ingresar una sinopsis")
+
                 modified_img_url = str(input("URL a una imagen de la portada (*opcional): "))
 
-                update_movie(title_tobe_modified, modified_title, modified_year, modified_director, modified_genre, modified_synopsis, modified_img_url)
+                print(update_movie(title_tobe_modified, modified_title, modified_year, modified_director, modified_genre, modified_synopsis, modified_img_url))
+                input("Presione enter para continuar... ")
+
 
             case 3:
                 movie = str(input("Ingrese el título de la película que desea eliminar: "))
-                delete_movie(movie)
+                print(delete_movie(movie))
+                input("Presione enter para continuar... ")
+
 
             case 4:
                 movie = input("Ingrese el nombre de la pelicula sobre la que quiere dejar una reseña: ")
                 review = input("A continuación, ingrese su reseña de la pelicula: ")
 
-                add_review(movie, review)
+                print(add_review(movie, review))
+                input("Presione enter para continuar... ")
+
 
             case 5:
                 directors_list()
                 director = input("Ingrese el nombre del director sobre el cual quiere ver las peliculas, tal cual figura en la lista: ")
                 
                 get_movies_by_director(director)
+                input("Presione enter para continuar... ")
+
 
             case 6:
                 get_movies_with_poster()
+                input("Presione enter para continuar... ")
 
             case 7:
                 directors_list()
+                input("Presione enter para continuar... ")
 
             case 8:
                 genres_list()
+                input("Presione enter para continuar... ")
 
             case 0:
                 logout()
+                input("Presione enter para continuar... ")
+
     
 # --------------------------------------------------------------------
 #ABM
@@ -179,6 +238,9 @@ def delete_movie(movie_tobe_deleted):
 # AGREGAR UNA RESEÑA
 def add_review(movie, new_review):
     global COOKIE
+    
+    if len(new_review) or len(movie) <= 0:
+        return ("La reseña o titulo de la pelicula estaban vacios, por favor intente nuevamente")
 
     direction = (f'http://localhost:5000/private/{movie}/agregar_reseña')
     response = requests.put(direction, json=new_review, cookies=COOKIE)
@@ -188,7 +250,8 @@ def add_review(movie, new_review):
         return ("El campo esta vacio. Por favor escriba una reseña para cargarla")
     elif response.status_code == 401:
         return ("No autorizado")
-
+     
+    return ("Ha ocurrido un error, por favor intente nuevamente")
 # --------------------------------------------------------------------
 # DEVOLVER LISTA POR DIRECTOR ESPECIFICO
 def get_movies_by_director(director):
@@ -344,6 +407,7 @@ while True:
                     print('---------------------------------')
                     print('1. INICIAR SESIÓN')
                     print('2. REGISTRARSE')
+                    print('0. VOLVER AL MENU INICIAL')
                     print('---------------------------------')
                     option_menu_login = int(input("Elija una opcion:"))
                     match option_menu_login:
@@ -364,6 +428,10 @@ while True:
 
                                 else:
                                     print('Las contraseñas no coinciden, intente nuevamente.')
+                        case 0:
+                            print('Gracias por usar esta herramienta, saludos!')
+                            break
+
                         case _:
                             print('Debe elegir una opción correcta.')
                             
