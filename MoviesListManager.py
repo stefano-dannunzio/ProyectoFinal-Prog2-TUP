@@ -35,7 +35,7 @@ def logout():
 def register(username, password):
     data = {"username": username , "password": password}
     response = requests.post("http://localhost:5000/register", json=data)
-    if response.status_code == 200:
+    if response.status_code == 201:
         print('Te has registrado satisfactoriamente')
     else:
         print('Ha ocurrido un error')
@@ -239,7 +239,7 @@ def delete_movie(movie_tobe_deleted):
 def add_review(movie, new_review):
     global COOKIE
     
-    if len(new_review) or len(movie) <= 0:
+    if len(new_review) <= 0 or len(movie) <= 0:
         return ("La reseña o titulo de la pelicula estaban vacios, por favor intente nuevamente")
 
     direction = (f'http://localhost:5000/private/{movie}/agregar_reseña')
@@ -313,10 +313,6 @@ def get_movies_with_poster():
             print(f"   Sinopsis : {movie['synopsis']}")
             print(f"   Link a imágen de la portada : {movie['img_url']}")
 
-            # if len(movie['img_url']) > 0:
-            #     print(f"   Link a imágen de la portada : {movie['img_url']}")
-            # else: 
-            #     print(f"   Esta pelicula no cuenta con un link a una imagen de portada")
             
             if len(movie['reviews']) > 0:
                 print(f"   Reseñas :")

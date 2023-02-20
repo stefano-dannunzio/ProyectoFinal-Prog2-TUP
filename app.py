@@ -1,9 +1,9 @@
 # Importación de módulos - Import modules
-from flask import Flask, jsonify, request, render_template, session
+from flask import Flask, jsonify, request, session
 import json
 
 app = Flask(__name__)
-app.secret_key = 'tupsito'
+# app.secret_key = 'tupsito'
 
 # ----- MODULOS PUBLICOS --------------------------------------
 # Ruta para el módulo publico
@@ -87,6 +87,7 @@ def retrieve_directors():
     # Abrir el directors.json
     with open('data/directors.json', 'r') as f:
         directors = json.load(f)
+
     # Devolver los directores en JSON
     return jsonify(directors)
 #----------------------------------------------------------------------------------------------------
@@ -101,6 +102,7 @@ def retrieve_genres():
     # Abrir el genres.json
     with open('data/genres.json', 'r') as f:
         genres = json.load(f)
+
     # Devolver los géneros en JSON
     return jsonify(genres)
 #----------------------------------------------------------------------------------------------------
@@ -165,9 +167,10 @@ def add_movie():
     # Añadir la película a la lista
     with open('data/movies.json', 'r') as f:
         movies = json.load(f)
+        
     movie_added = False
     # Si la película ya se encuentra en la lista, simplemente se agrega la review a la lista de reviews
-    for i, movie in enumerate(movies):
+    for movie in enumerate(movies):
         if movie['title'] == movie_data['title'] and movie['year'] == movie_data['year']:
             return 'La pelicula ya existe', 400
     # Si la película no se encuentra, se añade correctamente y se agrega la review
@@ -203,7 +206,7 @@ def update_movie(title):
     
     #Checkear que no tenga reseñas
     for movie in movies:
-        if len(movie["reviews"]) > 0:
+        if movie["title"] == title and len(movie["reviews"]) > 0:
             print(len(movie["reviews"]))
             return jsonify({'error': 'No puede modificar una pelicula con reseñas cargadas'}), 400
 

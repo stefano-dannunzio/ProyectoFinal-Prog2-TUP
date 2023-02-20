@@ -1,202 +1,223 @@
 [
-    {
-        "title": "La Naranja Mecanica", 
-        "year": "1971", 
-        "director": "Kubrick Stanley", 
-        "genre": "Drama", 
-        "synopsis": "Alexander Delarge es un joven sociópata, líder de una banda, apasionado por la música clásica y la violencia gratuita. Es traicionado, encarcelado y sometido al tratamiento Ludovico que altera totalmente la personalidad. Al final, sufre una caída que, en un golpe de suerte, deshace los efectos del tratamiento.", 
-        "img_url": "https://es.web.img3.acsta.net/pictures/14/03/26/13/26/223510.jpg", 
-        "reviews": ["Esta pelicula es una obra maestra, me encanto todo de ella, los personajes, los dialogos, los encuadres, la musica, incluso el doblaje es perfecto.", "Esta película es una joya ,me estoy leyendo el libro y a pesar de que me resulta algo pesado ese idioma inventado ,es muy entretenido."]
-    }, 
-    {
-        
-        "title": "Psicosis", 
-        "year": 1960, 
-        "director": "Hitchcock Alfred", 
-        "genre": "Terror", 
-        "synopsis": "En Psicosis, una joven (Janet Leigh) roba una pequeña suma de dinero de su trabajo y emprende la huida. Por el camino se refugia para pasar la noche en un lúgubre motel de carretera atendido por un joven encantador llamado Norman Bates. De repente, es asesinada. Un detective emprende su búsqueda, alertado por los dueños del dinero que robó.", 
-        "img_url": "https://encrypted-tbn1.gstatic.com/images?q=tbn:ANd9GcRicca1uD1bCkKQF3FqdlhTpxRnsetHxLWfQPXU8B1Mt-uqXYHr", 
-        "reviews": ["una obra maestra del cine", "Una gran trama y escenas inolvidables."]
-    },
-    {
-        
-        "title": "El viaje de Chihiro", 
-        "year": 2001, 
-        "director": "Miyazaki Hayao", 
-        "genre": "Animación", 
-        "synopsis": "Cuenta la historia de una niña de diez años llamada Chihiro, quien durante una mudanza se ve atrapada en un mundo mágico y sobrenatural, teniendo como misión buscar su libertad y la de sus padres, y así poder regresar a su mundo.", 
-        "img_url": "https://es.web.img2.acsta.net/pictures/21/05/11/13/47/5979708.jpg", 
-        "reviews": ["Esta película es una maravilla! Toda una joya del cine!", "Cuando la ví por primera vez me quedé con la boca abierta. La música, el ambiente, el paisaje… menuda obra maestra nos ha regalado Hayao Miyazaki", "Insuperable e inolvidable. Las peliculas de Ghibli las mejores,  hechas a manos. Grande Miyasaki."]
-    },
-    {
-        
-        "title": "Annie Hall", 
-        "year": 1977, 
-        "director": "Allen Woody", 
-        "genre": "Romance", 
-        "synopsis": "Alvy Singer, un cuarentón bastante neurótico, trabaja como humorista en clubs nocturnos. Tras romper con Annie, reflexiona sobre su vida, rememorando sus amores, sus matrimonios, pero sobre todo su relación con Annie. Al final, llega a la conclusión de que son sus manías y obsesiones las que siempre acaban arruinando su relación con las mujeres. ", 
-        "img_url": "https://m.media-amazon.com/images/M/MV5BZDg1OGQ4YzgtM2Y2NS00NjA3LWFjYTctMDRlMDI3NWE1OTUyXkEyXkFqcGdeQXVyMjUzOTY1NTc@._V1_.jpg", 
-        "reviews": ["Excelente película", "Soy fan de Woody Alleen y su pesimismo ante la vida.", "Tiene un par de escenas simpáticas, pero no me funciona como historia. Pareciera una serie de situaciones cotidianas que funcionan individualmente, pero que dicen muy poco como conjunto.", "Obra Maestra! Genio, Woody Allen.", "Maravillosa película."]
-    },
-    {
-        
-        "title": "Lo que el viento se llevo", 
-        "year": 1939, 
-        "director": "Cuckor George", 
-        "genre": "Historico", 
-        "synopsis": "Situada en el sur de Estados Unidos con el telón de fondo de la guerra de Secesión y la reconstrucción, la película narra la historia de Scarlett O'Hara, la resuelta hija de los propietarios de una plantación de Georgia, desde su romántica persecución de Ashley Wilkes, prometido con su prima, Melanie Hamilton, hasta su matrimonio con Rhett Butler.", 
-        "img_url": "https://es.web.img3.acsta.net/pictures/14/03/10/09/59/477243.jpg", 
-        "reviews": ["Es un clásico de las mejores películas que vi en mi vida!! Aunque dure 3 hs, me da mucho gusto volver a verla", "Que bella peli", "Hermosa por los siglos de los siglos" ]
-    },
-    {
-        
-        "title": "El gran dictador", 
-        "year": 1940, 
-        "director": "Chaplin Charles", 
-        "genre": "Satira", 
-        "synopsis": "Un humilde barbero judío que combatió con el ejército de Tomania en la Primera Guerra Mundial vuelve a su casa años después del fin del conflicto. Amnésico a causa de un accidente de avión, no recuerda prácticamente nada de su vida pasada, y no conoce la situación política actual del país: Adenoid Hynkel, un dictador fascista y racista, ha llegado al poder y ha iniciado la persecución del pueblo judío, a quien considera responsable de la situación de crisis que vive el país. Paralelamente, Hynkel y sus colaboradores han empezado a preparar una ofensiva militar destinada a la conquista de todo el mundo.", 
-        "img_url": "https://historia1imagen.files.wordpress.com/2008/06/chaplin-gram-dictador.jpg", 
-        "reviews": ["Un destello de esperanza para la humanidad", "Absolutamente memorable"]
-    },
-    {
-        
-        "title": "El club de la pelea", 
-        "year": 1999, 
-        "director": "Fincher David", 
-        "genre": "Drama", 
-        "synopsis": "Un joven hastiado de su gris y monótona vida lucha contra el insomnio. En un viaje en avión conoce a un carismático vendedor de jabón que sostiene una teoría muy particular: el perfeccionismo es cosa de gentes débiles; sólo la autodestrucción hace que la vida merezca la pena. Ambos deciden entonces fundar un club secreto de lucha, donde poder descargar sus frustaciones y su ira, que tendrá un éxito arrollador.", 
-        "img_url": "https://es.web.img2.acsta.net/medias/nmedia/18/69/04/88/20140966.jpg", 
-        "reviews": ["Una excelente película que no os dejará indiferentes.", "Nos encontramos ante una obra brillante que recoge el espíritu de toda una generación de una forma terriblemente veraz."]
-    },
-    {
-        
-        "title": "El gran pez", 
-        "year": 2003, 
-        "director": "Burton Tim", 
-        "genre": "Drama", 
-        "synopsis": "William Bloom no tiene muy buena relación con su padre, pero tras enterarse de que padece una enfermedad terminal, regresa a su hogar para estar a su lado en sus últimos momentos. Una vez más, William se verá obligado a escucharlo mientras cuenta las interminables historias de su juventud. Pero, en esta ocasión, tratará de averiguar cosas que le permitan conocer mejor a su padre, aunque para ello tendrá que separar claramente realidad y fantasía, elementos que aparecen siempre mezclados en los relatos de su progenitor.", 
-        "img_url": "https://static.wikia.nocookie.net/doblaje/images/7/7d/El_Gran_Pez_-_Poster.jpg/revision/latest?cb=20181105010300&path-prefix=es", 
-        "reviews": [""]
-    },
-    {
-        
-        "title": "El señor de los anillos: La comunidad del anillo", 
-        "year": 2001, 
-        "director": "Jackson Peter", 
-        "genre": "Fantastico", 
-        "synopsis": "En la Tierra Media, el Señor Oscuro Sauron ordenó a los Elfos que forjaran los Grandes Anillos de Poder. Tres para los reyes Elfos, siete para los Señores Enanos, y nueve para los Hombres Mortales. Pero Saurón también forjó, en secreto, el Anillo Único, que tiene el poder de esclavizar toda la Tierra Media. Con la ayuda de sus amigos y de valientes aliados, el joven hobbit Frodo emprende un peligroso viaje con la misión de destruir el Anillo Único. Pero el malvado Sauron ordena la persecución del grupo, compuesto por Frodo y sus leales amigos hobbits, un mago, un hombre, un elfo y un enano. La misión es casi suicida pero necesaria, pues si Sauron con su ejército de orcos lograra recuperar el Anillo, sería el final de la Tierra Media.", 
-        "img_url": "https://images-na.ssl-images-amazon.com/images/S/pv-target-images/83967252b9249d87243b933872e50782152c762f936f158f1301e4e29f03d990._RI_V_TTW_.jpg", 
-        "reviews": ["Todo es precioso y mayestático en esta cinta audiovisualmente perfecta.", "Hermosa (sobre todo en lo visual) adaptación del libro que inicia la trilogía de 'El Señor de los Anillo'", "Una película llena de fantasía, magia, ilusión y batallas épicas. " ]
-    },
-    {
-        
-        "title": "El mago de Oz", 
-        "year": 1939, 
-        "director": "Fleming Victor", 
-        "genre": "Fantastico", 
-        "synopsis": "Dorothy, que sueña con viajar 'más allá del arco iris', ve su deseo hecho realidad cuando un tornado se la lleva con su perrito al mundo de Oz. Pero la aventura sólo acaba de comenzar: tras ofender a la Malvada Bruja del Oeste, aconsejada por la Bruja Buena del Norte, la niña se dirige por el Camino Amarillo hacia la Ciudad Esmeralda, donde vive el todopoderoso Mago de Oz, que puede ayudarla a regresar a Kansas. Durante el viaje, se hace amiga del Espantapájaros (Ray Bolger), el Hombre de Hojalata y el León Cobarde. El Espantapájaros desea un cerebro, el Hombre de Hojalata quiere un corazón, y el León, el coraje que le falta; convencidos de que el Mago también les puede ayudar a ellos, deciden unirse a Dorothy en su odisea hasta la Ciudad Esmeralda. ", 
-        "img_url": "https://es.web.img2.acsta.net/pictures/14/04/02/11/44/157777.jpg", 
-        "reviews": [""]
-    },
-    {
-        
-        "title": "Casablanca", 
-        "year": 1942, 
-        "director": "Curtiz Michael", 
-        "genre": "Drama", 
-        "synopsis": "Años 40. A consecuencia de la Segunda Guerra Mundial, Casablanca era una ciudad a la que llegaban huyendo del nazismo gente de todas partes: llegar era fácil, pero salir era casi imposible, especialmente si el nombre del fugitivo figuraba en las listas de la Gestapo, que presionaba a la autoridades francesas al mando del corrupto inspector Renault. En este caso, el objetivo de la policía secreta alemana es el líder checo y héroe de la resistencia Victor Laszlo, cuya única esperanza es Rick Blaine, propietario del 'Rick’s Café' y antiguo amante de su mujer, Ilsa Lund. Rick e Ilsa se habían conocido en París, pero la entrada de las tropas alemanas en la capital francesa les separó.", 
-        "img_url": "https://upload.wikimedia.org/wikipedia/commons/b/b3/CasablancaPoster-Gold.jpg", 
-        "reviews": [""]
-    },
-    {
-        
-        "title": "Forrest Gump", 
-        "year": 1994, 
-        "director": "Zemeckis Robert", 
-        "genre": "Drama", 
-        "synopsis": "Forrest Gump (Tom Hanks) sufre desde pequeño un cierto retraso mental. A pesar de todo, gracias a su tenacidad y a su buen corazón será protagonista de acontecimientos cruciales de su país durante varias décadas. Mientras pasan por su vida multitud de cosas en su mente siempre está presente la bella Jenny (Robin Wright), su gran amor desde la infancia, que junto a su madre será la persona más importante en su vida. ", 
-        "img_url": "", 
-        "reviews": [""]
-    },
-    {
-        
-        "title": "El show de Truman", 
-        "year": 1998, 
-        "director": "Weir Peter", 
-        "genre": "Comedia dramatica", 
-        "synopsis": "Truman Burbank es un hombre corriente y algo ingenuo que ha vivido toda su vida en uno de esos pueblos donde nunca pasa nada. Sin embargo, de repente, unos extraños sucesos le hacen sospechar que algo anormal está ocurriendo. Todos sus amigos son actores, toda su ciudad es un plató, toda su vida está siendo filmada y emitida como el reality más ambicioso de la historia. ", 
-        "img_url": "", 
-        "reviews": [""]
-    },
-    {
-        
-        "title": "El secreto de sus ojos", 
-        "year": 2009, 
-        "director": "Campanella Juan Jose", 
-        "genre": "Thriller", 
-        "synopsis": "Benjamín Espósito es oficial de un Juzgado de Instrucción de Buenos Aires recién retirado. Obsesionado por un brutal asesinato ocurrido veinticinco años antes, en 1974, decide escribir una novela sobre el caso, del cual fue testigo y protagonista. Reviviendo el pasado, viene también a su memoria el recuerdo de una mujer, a quien ha amado en silencio durante todos esos años.", 
-        "img_url": "", 
-        "reviews": [""]
-    },
-    {
-        
-        "title": "Star Wars : La guerra de las galaxias", 
-        "year": 1977, 
-        "director": "Lucas George", 
-        "genre": "Sci-Fi", 
-        "synopsis": "La princesa Leia, líder del movimiento rebelde que desea reinstaurar la República en la galaxia en los tiempos ominosos del Imperio, es capturada por las Fuerzas Imperiales, capitaneadas por el implacable Darth Vader, el sirviente más fiel del Emperador. El intrépido y joven Luke Skywalker, ayudado por Han Solo, capitán de la nave espacial 'El Halcón Milenario', y los androides, R2D2 y C3PO, serán los encargados de luchar contra el enemigo e intentar rescatar a la princesa para volver a instaurar la justicia en el seno de la galaxia. ", 
-        "img_url": "https://pics.filmaffinity.com/star_wars-166209019-mmed.jpg", 
-        "reviews": ["Como icono y mitología cinéfila esta peli es el súmum, la panacea, la cúspide, el pináculo y varios sinónimos más que uso por primera vez en mi vida. Como fenómeno no ha habido nada igual.", "Una de las películas míticas de la historia del cine y ante una de esas historias, que han marcado una época."]
-    },
-    {
-        
-        "title": "American Beauty", 
-        "year": 1999, 
-        "director": "Mendes Sam", 
-        "genre": "Drama", 
-        "synopsis": "Lester Burnham ha cumplido ya cuarenta años, su edad y condiciones lo llevan a atravesar una crisis que incluye su fallido matrimonio con Carolyn que va de mal en peor, al igual que su trabajo al cual termina renunciando para buscarse otro en el que tenga el menor número de responsabilidades posibles.", 
-        "img_url": "", 
-        "reviews": [""]
-    },
-    {
-        
-        "title": "Gladiator", 
-        "year": 2000, 
-        "director": "Scott Ridley", 
-        "genre": "Accion", 
-        "synopsis": " El general romano Maximus ha vuelto a regresar victorioso con sus legiones del campo de batalla. Ahora solo quiere volver junto a su esposa e hijo. Pero el emperador Marco Aurelio tiene una nueva misión para él: quiere que sea su sucesor.", 
-        "img_url": "https://encrypted-tbn2.gstatic.com/images?q=tbn:ANd9GcQo_O8X1L56DAr8hFZz-B8ku7vvcvbrBh5plxWxa_Y1uIWA9Ohr", 
-        "reviews": ["El general que se convirtió en esclavo, el esclavo  que se convirtió en gladiador, el gladiador que desafío al emperador, que gran historia", "Pedazo de película, después de años aún  me emociona."]
-    },
-    {
-        
-        "title": "Toy Story", 
-        "year": 1995, 
-        "director": "Lasseter John", 
-        "genre": "Animación", 
-        "synopsis": "La trama se centra en la rivalidad entre los dos muñecos favoritos de Andy, un niño de seis años. Por un lado está Woody, un estirado pistolero de trapo; y, por otro, Buzz Lightyear, un sofisticado muñeco que se cree un verdadero guardián del espacio.", 
-        "img_url": "https://m.media-amazon.com/images/M/MV5BMDU2ZWJlMjktMTRhMy00ZTA5LWEzNDgtYmNmZTEwZTViZWJkXkEyXkFqcGdeQXVyNDQ2OTk4MzI@._V1_.jpg", 
-        "reviews": [""]
-    },
-    {
-        
-        "title": "Pulp fiction", 
-        "year": 1995, 
-        "director": "Tarantino Quentin", 
-        "genre": "Crimen", 
-        "synopsis": "Vincent y Jules trabajan para Marsellus Wallace, un gánster que controla los negocios oscuros de la ciudad, entre ellos, las apuestas. Los dos matones tienen diferentes misiones que cumplir para Marsellus. La principal de ellas es recuperar un maletín misterioso. A lo largo de sus tareas, su destino se entrelaza con los más diversos personajes.", 
-        "img_url": "", 
-        "reviews": [""]
-    },
-    {
-        
-        "title": "El cadaver de la novia", 
-        "year": 2005, 
-        "director": "Burton Tim", 
-        "genre": "Fantastico", 
-        "synopsis": "Ambientada en una aldea europea del siglo 19, esta película de animación cuenta la historia de Víctor, un joven que es llevado repentinamente al inframundo al casarse accidentalmente con una misteriosa novia que es un cadáver mientras que su novia real, Victoria, le espera en la tierra de los vivos. Aún cuando la vida en el mundo de los muertos resulta ser mucho más colorida de lo que su estricta educación ofrecía, Víctor comprende que no existe nada en esta vida ni en la otra, que lo pueda separar de su verdadero amor.", 
-        "img_url": "https://static.wikia.nocookie.net/cine/images/3/3c/Corpse_Bride_Poster.jpg/revision/latest?cb=20201031235241", 
-        "reviews": ["El señor Burton estuvo muy acertado con este film... lástima que últimamente se pierda un poco en los guiones...", "Me ENCANTA esta película ^-^ Y el final para mí no puede ser mejor ^-^", "Como me enamore de estos personajes... Mi parte favorita es el regreso de los muertos al mundo de los vivos... Cuando el abuelito abraza al niño."]
-    }
-    
+  {
+    "title": "La Naranja Mecanica",
+    "year": "1971",
+    "director": "Kubrick Stanley",
+    "genre": "Drama",
+    "synopsis": "Alexander Delarge es un joven soci\u00c3\u00b3pata, l\u00c3\u00adder de una banda, apasionado por la m\u00c3\u00basica cl\u00c3\u00a1sica y la violencia gratuita. Es traicionado, encarcelado y sometido al tratamiento Ludovico que altera totalmente la personalidad. Al final, sufre una ca\u00c3\u00adda que, en un golpe de suerte, deshace los efectos del tratamiento.",
+    "img_url": "https://es.web.img3.acsta.net/pictures/14/03/26/13/26/223510.jpg",
+    "reviews": [
+      "Esta pelicula es una obra maestra, me encanto todo de ella, los personajes, los dialogos, los encuadres, la musica, incluso el doblaje es perfecto.",
+      "Esta pel\u00c3\u00adcula es una joya ,me estoy leyendo el libro y a pesar de que me resulta algo pesado ese idioma inventado ,es muy entretenido."
+    ]
+  },
+  {
+    "title": "Psicosis",
+    "year": 1960,
+    "director": "Hitchcock Alfred",
+    "genre": "Terror",
+    "synopsis": "En Psicosis, una joven (Janet Leigh) roba una peque\u00c3\u00b1a suma de dinero de su trabajo y emprende la huida. Por el camino se refugia para pasar la noche en un l\u00c3\u00bagubre motel de carretera atendido por un joven encantador llamado Norman Bates. De repente, es asesinada. Un detective emprende su b\u00c3\u00basqueda, alertado por los due\u00c3\u00b1os del dinero que rob\u00c3\u00b3.",
+    "img_url": "https://encrypted-tbn1.gstatic.com/images?q=tbn:ANd9GcRicca1uD1bCkKQF3FqdlhTpxRnsetHxLWfQPXU8B1Mt-uqXYHr",
+    "reviews": [
+      "una obra maestra del cine",
+      "Una gran trama y escenas inolvidables."
+
+    ]
+  },
+  {
+    "title": "El viaje de Chihiro",
+    "year": 2001,
+    "director": "Miyazaki Hayao",
+    "genre": "Animaci\u00c3\u00b3n",
+    "synopsis": "Cuenta la historia de una ni\u00c3\u00b1a de diez a\u00c3\u00b1os llamada Chihiro, quien durante una mudanza se ve atrapada en un mundo m\u00c3\u00a1gico y sobrenatural, teniendo como misi\u00c3\u00b3n buscar su libertad y la de sus padres, y as\u00c3\u00ad poder regresar a su mundo.",
+    "img_url": "https://es.web.img2.acsta.net/pictures/21/05/11/13/47/5979708.jpg",
+    "reviews": [
+      "Esta pel\u00c3\u00adcula es una maravilla! Toda una joya del cine!",
+      "Cuando la v\u00c3\u00ad por primera vez me qued\u00c3\u00a9 con la boca abierta. La m\u00c3\u00basica, el ambiente, el paisaje\u00e2\u20ac\u00a6 menuda obra maestra nos ha regalado Hayao Miyazaki",
+      "Insuperable e inolvidable. Las peliculas de Ghibli las mejores,  hechas a manos. Grande Miyasaki."
+    ]
+  },
+  {
+    "title": "Annie Hall",
+    "year": 1977,
+    "director": "Allen Woody",
+    "genre": "Romance",
+    "synopsis": "Alvy Singer, un cuarent\u00c3\u00b3n bastante neur\u00c3\u00b3tico, trabaja como humorista en clubs nocturnos. Tras romper con Annie, reflexiona sobre su vida, rememorando sus amores, sus matrimonios, pero sobre todo su relaci\u00c3\u00b3n con Annie. Al final, llega a la conclusi\u00c3\u00b3n de que son sus man\u00c3\u00adas y obsesiones las que siempre acaban arruinando su relaci\u00c3\u00b3n con las mujeres. ",
+    "img_url": "https://m.media-amazon.com/images/M/MV5BZDg1OGQ4YzgtM2Y2NS00NjA3LWFjYTctMDRlMDI3NWE1OTUyXkEyXkFqcGdeQXVyMjUzOTY1NTc@._V1_.jpg",
+    "reviews": [
+      "Excelente pel\u00c3\u00adcula",
+      "Soy fan de Woody Alleen y su pesimismo ante la vida.",
+      "Tiene un par de escenas simp\u00c3\u00a1ticas, pero no me funciona como historia. Pareciera una serie de situaciones cotidianas que funcionan individualmente, pero que dicen muy poco como conjunto.",
+      "Obra Maestra! Genio, Woody Allen.",
+      "Maravillosa pel\u00c3\u00adcula."
+    ]
+  },
+  {
+    "title": "Lo que el viento se llevo",
+    "year": 1939,
+    "director": "Cuckor George",
+    "genre": "Historico",
+    "synopsis": "Situada en el sur de Estados Unidos con el tel\u00c3\u00b3n de fondo de la guerra de Secesi\u00c3\u00b3n y la reconstrucci\u00c3\u00b3n, la pel\u00c3\u00adcula narra la historia de Scarlett O'Hara, la resuelta hija de los propietarios de una plantaci\u00c3\u00b3n de Georgia, desde su rom\u00c3\u00a1ntica persecuci\u00c3\u00b3n de Ashley Wilkes, prometido con su prima, Melanie Hamilton, hasta su matrimonio con Rhett Butler.",
+    "img_url": "https://es.web.img3.acsta.net/pictures/14/03/10/09/59/477243.jpg",
+    "reviews": [
+      "Es un cl\u00c3\u00a1sico de las mejores pel\u00c3\u00adculas que vi en mi vida!! Aunque dure 3 hs, me da mucho gusto volver a verla",
+      "Que bella peli",
+      "Hermosa por los siglos de los siglos"
+    ]
+  },
+  {
+    "title": "El gran dictador",
+    "year": 1940,
+    "director": "Chaplin Charles",
+    "genre": "Satira",
+    "synopsis": "Un humilde barbero jud\u00c3\u00ado que combati\u00c3\u00b3 con el ej\u00c3\u00a9rcito de Tomania en la Primera Guerra Mundial vuelve a su casa a\u00c3\u00b1os despu\u00c3\u00a9s del fin del conflicto. Amn\u00c3\u00a9sico a causa de un accidente de avi\u00c3\u00b3n, no recuerda pr\u00c3\u00a1cticamente nada de su vida pasada, y no conoce la situaci\u00c3\u00b3n pol\u00c3\u00adtica actual del pa\u00c3\u00ads: Adenoid Hynkel, un dictador fascista y racista, ha llegado al poder y ha iniciado la persecuci\u00c3\u00b3n del pueblo jud\u00c3\u00ado, a quien considera responsable de la situaci\u00c3\u00b3n de crisis que vive el pa\u00c3\u00ads. Paralelamente, Hynkel y sus colaboradores han empezado a preparar una ofensiva militar destinada a la conquista de todo el mundo.",
+    "img_url": "https://historia1imagen.files.wordpress.com/2008/06/chaplin-gram-dictador.jpg",
+    "reviews": [
+      "Un destello de esperanza para la humanidad",
+      "Absolutamente memorable"
+    ]
+  },
+  {
+    "title": "El club de la pelea",
+    "year": 1999,
+    "director": "Fincher David",
+    "genre": "Drama",
+    "synopsis": "Un joven hastiado de su gris y mon\u00c3\u00b3tona vida lucha contra el insomnio. En un viaje en avi\u00c3\u00b3n conoce a un carism\u00c3\u00a1tico vendedor de jab\u00c3\u00b3n que sostiene una teor\u00c3\u00ada muy particular: el perfeccionismo es cosa de gentes d\u00c3\u00a9biles; s\u00c3\u00b3lo la autodestrucci\u00c3\u00b3n hace que la vida merezca la pena. Ambos deciden entonces fundar un club secreto de lucha, donde poder descargar sus frustaciones y su ira, que tendr\u00c3\u00a1 un \u00c3\u00a9xito arrollador.",
+    "img_url": "https://es.web.img2.acsta.net/medias/nmedia/18/69/04/88/20140966.jpg",
+    "reviews": [
+      "Una excelente pel\u00c3\u00adcula que no os dejar\u00c3\u00a1 indiferentes.",
+      "Nos encontramos ante una obra brillante que recoge el esp\u00c3\u00adritu de toda una generaci\u00c3\u00b3n de una forma terriblemente veraz."
+    ]
+  },
+  {
+    "title": "El gran pez",
+    "year": 2003,
+    "director": "Burton Tim",
+    "genre": "Drama",
+    "synopsis": "William Bloom no tiene muy buena relaci\u00c3\u00b3n con su padre, pero tras enterarse de que padece una enfermedad terminal, regresa a su hogar para estar a su lado en sus \u00c3\u00baltimos momentos. Una vez m\u00c3\u00a1s, William se ver\u00c3\u00a1 obligado a escucharlo mientras cuenta las interminables historias de su juventud. Pero, en esta ocasi\u00c3\u00b3n, tratar\u00c3\u00a1 de averiguar cosas que le permitan conocer mejor a su padre, aunque para ello tendr\u00c3\u00a1 que separar claramente realidad y fantas\u00c3\u00ada, elementos que aparecen siempre mezclados en los relatos de su progenitor.",
+    "img_url": "https://static.wikia.nocookie.net/doblaje/images/7/7d/El_Gran_Pez_-_Poster.jpg/revision/latest?cb=20181105010300&path-prefix=es",
+    "reviews": []
+  },
+  {
+    "title": "El se\u00c3\u00b1or de los anillos: La comunidad del anillo",
+    "year": 2001,
+    "director": "Jackson Peter",
+    "genre": "Fantastico",
+    "synopsis": "En la Tierra Media, el Se\u00c3\u00b1or Oscuro Sauron orden\u00c3\u00b3 a los Elfos que forjaran los Grandes Anillos de Poder. Tres para los reyes Elfos, siete para los Se\u00c3\u00b1ores Enanos, y nueve para los Hombres Mortales. Pero Saur\u00c3\u00b3n tambi\u00c3\u00a9n forj\u00c3\u00b3, en secreto, el Anillo \u00c3\u0161nico, que tiene el poder de esclavizar toda la Tierra Media. Con la ayuda de sus amigos y de valientes aliados, el joven hobbit Frodo emprende un peligroso viaje con la misi\u00c3\u00b3n de destruir el Anillo \u00c3\u0161nico. Pero el malvado Sauron ordena la persecuci\u00c3\u00b3n del grupo, compuesto por Frodo y sus leales amigos hobbits, un mago, un hombre, un elfo y un enano. La misi\u00c3\u00b3n es casi suicida pero necesaria, pues si Sauron con su ej\u00c3\u00a9rcito de orcos lograra recuperar el Anillo, ser\u00c3\u00ada el final de la Tierra Media.",
+    "img_url": "https://images-na.ssl-images-amazon.com/images/S/pv-target-images/83967252b9249d87243b933872e50782152c762f936f158f1301e4e29f03d990._RI_V_TTW_.jpg",
+    "reviews": [
+      "Todo es precioso y mayest\u00c3\u00a1tico en esta cinta audiovisualmente perfecta.",
+      "Hermosa (sobre todo en lo visual) adaptaci\u00c3\u00b3n del libro que inicia la trilog\u00c3\u00ada de 'El Se\u00c3\u00b1or de los Anillo'",
+      "Una pel\u00c3\u00adcula llena de fantas\u00c3\u00ada, magia, ilusi\u00c3\u00b3n y batallas \u00c3\u00a9picas. "
+    ]
+  },
+  {
+    "title": "El mago de Oz",
+    "year": 1939,
+    "director": "Fleming Victor",
+    "genre": "Fantastico",
+    "synopsis": "Dorothy, que sue\u00c3\u00b1a con viajar 'm\u00c3\u00a1s all\u00c3\u00a1 del arco iris', ve su deseo hecho realidad cuando un tornado se la lleva con su perrito al mundo de Oz. Pero la aventura s\u00c3\u00b3lo acaba de comenzar: tras ofender a la Malvada Bruja del Oeste, aconsejada por la Bruja Buena del Norte, la ni\u00c3\u00b1a se dirige por el Camino Amarillo hacia la Ciudad Esmeralda, donde vive el todopoderoso Mago de Oz, que puede ayudarla a regresar a Kansas. Durante el viaje, se hace amiga del Espantap\u00c3\u00a1jaros (Ray Bolger), el Hombre de Hojalata y el Le\u00c3\u00b3n Cobarde. El Espantap\u00c3\u00a1jaros desea un cerebro, el Hombre de Hojalata quiere un coraz\u00c3\u00b3n, y el Le\u00c3\u00b3n, el coraje que le falta; convencidos de que el Mago tambi\u00c3\u00a9n les puede ayudar a ellos, deciden unirse a Dorothy en su odisea hasta la Ciudad Esmeralda. ",
+    "img_url": "https://es.web.img2.acsta.net/pictures/14/04/02/11/44/157777.jpg",
+    "reviews": []
+  },
+  {
+    "title": "Casablanca",
+    "year": 1942,
+    "director": "Curtiz Michael",
+    "genre": "Drama",
+    "synopsis": "A\u00c3\u00b1os 40. A consecuencia de la Segunda Guerra Mundial, Casablanca era una ciudad a la que llegaban huyendo del nazismo gente de todas partes: llegar era f\u00c3\u00a1cil, pero salir era casi imposible, especialmente si el nombre del fugitivo figuraba en las listas de la Gestapo, que presionaba a la autoridades francesas al mando del corrupto inspector Renault. En este caso, el objetivo de la polic\u00c3\u00ada secreta alemana es el l\u00c3\u00adder checo y h\u00c3\u00a9roe de la resistencia Victor Laszlo, cuya \u00c3\u00banica esperanza es Rick Blaine, propietario del 'Rick\u00e2\u20ac\u2122s Caf\u00c3\u00a9' y antiguo amante de su mujer, Ilsa Lund. Rick e Ilsa se hab\u00c3\u00adan conocido en Par\u00c3\u00ads, pero la entrada de las tropas alemanas en la capital francesa les separ\u00c3\u00b3.",
+    "img_url": "https://upload.wikimedia.org/wikipedia/commons/b/b3/CasablancaPoster-Gold.jpg",
+    "reviews": []
+  },
+  {
+    "title": "Forrest Gump",
+    "year": 1994,
+    "director": "Zemeckis Robert",
+    "genre": "Drama",
+    "synopsis": "Forrest Gump (Tom Hanks) sufre desde peque\u00c3\u00b1o un cierto retraso mental. A pesar de todo, gracias a su tenacidad y a su buen coraz\u00c3\u00b3n ser\u00c3\u00a1 protagonista de acontecimientos cruciales de su pa\u00c3\u00ads durante varias d\u00c3\u00a9cadas. Mientras pasan por su vida multitud de cosas en su mente siempre est\u00c3\u00a1 presente la bella Jenny (Robin Wright), su gran amor desde la infancia, que junto a su madre ser\u00c3\u00a1 la persona m\u00c3\u00a1s importante en su vida. ",
+    "img_url": "",
+    "reviews": []
+  },
+  {
+    "title": "El show de Truman",
+    "year": 1998,
+    "director": "Weir Peter",
+    "genre": "Comedia dramatica",
+    "synopsis": "Truman Burbank es un hombre corriente y algo ingenuo que ha vivido toda su vida en uno de esos pueblos donde nunca pasa nada. Sin embargo, de repente, unos extra\u00c3\u00b1os sucesos le hacen sospechar que algo anormal est\u00c3\u00a1 ocurriendo. Todos sus amigos son actores, toda su ciudad es un plat\u00c3\u00b3, toda su vida est\u00c3\u00a1 siendo filmada y emitida como el reality m\u00c3\u00a1s ambicioso de la historia. ",
+    "img_url": "",
+    "reviews": []
+  },
+  {
+    "title": "El secreto de sus ojos",
+    "year": 2009,
+    "director": "Campanella Juan Jose",
+    "genre": "Thriller",
+    "synopsis": "Benjam\u00c3\u00adn Esp\u00c3\u00b3sito es oficial de un Juzgado de Instrucci\u00c3\u00b3n de Buenos Aires reci\u00c3\u00a9n retirado. Obsesionado por un brutal asesinato ocurrido veinticinco a\u00c3\u00b1os antes, en 1974, decide escribir una novela sobre el caso, del cual fue testigo y protagonista. Reviviendo el pasado, viene tambi\u00c3\u00a9n a su memoria el recuerdo de una mujer, a quien ha amado en silencio durante todos esos a\u00c3\u00b1os.",
+    "img_url": "",
+    "reviews": []
+  },
+  {
+    "title": "Star Wars : La guerra de las galaxias",
+    "year": 1977,
+    "director": "Lucas George",
+    "genre": "Sci-Fi",
+    "synopsis": "La princesa Leia, l\u00c3\u00adder del movimiento rebelde que desea reinstaurar la Rep\u00c3\u00bablica en la galaxia en los tiempos ominosos del Imperio, es capturada por las Fuerzas Imperiales, capitaneadas por el implacable Darth Vader, el sirviente m\u00c3\u00a1s fiel del Emperador. El intr\u00c3\u00a9pido y joven Luke Skywalker, ayudado por Han Solo, capit\u00c3\u00a1n de la nave espacial 'El Halc\u00c3\u00b3n Milenario', y los androides, R2D2 y C3PO, ser\u00c3\u00a1n los encargados de luchar contra el enemigo e intentar rescatar a la princesa para volver a instaurar la justicia en el seno de la galaxia. ",
+    "img_url": "https://pics.filmaffinity.com/star_wars-166209019-mmed.jpg",
+    "reviews": [
+      "Como icono y mitolog\u00c3\u00ada cin\u00c3\u00a9fila esta peli es el s\u00c3\u00bamum, la panacea, la c\u00c3\u00baspide, el pin\u00c3\u00a1culo y varios sin\u00c3\u00b3nimos m\u00c3\u00a1s que uso por primera vez en mi vida. Como fen\u00c3\u00b3meno no ha habido nada igual.",
+      "Una de las pel\u00c3\u00adculas m\u00c3\u00adticas de la historia del cine y ante una de esas historias, que han marcado una \u00c3\u00a9poca."
+    ]
+  },
+  {
+    "title": "American Beauty",
+    "year": 1999,
+    "director": "Mendes Sam",
+    "genre": "Drama",
+    "synopsis": "Lester Burnham ha cumplido ya cuarenta a\u00c3\u00b1os, su edad y condiciones lo llevan a atravesar una crisis que incluye su fallido matrimonio con Carolyn que va de mal en peor, al igual que su trabajo al cual termina renunciando para buscarse otro en el que tenga el menor n\u00c3\u00bamero de responsabilidades posibles.",
+    "img_url": "",
+    "reviews": []
+  },
+  {
+    "title": "Gladiator",
+    "year": 2000,
+    "director": "Scott Ridley",
+    "genre": "Accion",
+    "synopsis": " El general romano Maximus ha vuelto a regresar victorioso con sus legiones del campo de batalla. Ahora solo quiere volver junto a su esposa e hijo. Pero el emperador Marco Aurelio tiene una nueva misi\u00c3\u00b3n para \u00c3\u00a9l: quiere que sea su sucesor.",
+    "img_url": "https://encrypted-tbn2.gstatic.com/images?q=tbn:ANd9GcQo_O8X1L56DAr8hFZz-B8ku7vvcvbrBh5plxWxa_Y1uIWA9Ohr",
+    "reviews": [
+      "El general que se convirti\u00c3\u00b3 en esclavo, el esclavo  que se convirti\u00c3\u00b3 en gladiador, el gladiador que desaf\u00c3\u00ado al emperador, que gran historia",
+      "Pedazo de pel\u00c3\u00adcula, despu\u00c3\u00a9s de a\u00c3\u00b1os a\u00c3\u00ban  me emociona."
+    ]
+  },
+  {
+    "title": "Toy Story",
+    "year": 1995,
+    "director": "Lasseter John",
+    "genre": "Animaci\u00c3\u00b3n",
+    "synopsis": "La trama se centra en la rivalidad entre los dos mu\u00c3\u00b1ecos favoritos de Andy, un ni\u00c3\u00b1o de seis a\u00c3\u00b1os. Por un lado est\u00c3\u00a1 Woody, un estirado pistolero de trapo; y, por otro, Buzz Lightyear, un sofisticado mu\u00c3\u00b1eco que se cree un verdadero guardi\u00c3\u00a1n del espacio.",
+    "img_url": "https://m.media-amazon.com/images/M/MV5BMDU2ZWJlMjktMTRhMy00ZTA5LWEzNDgtYmNmZTEwZTViZWJkXkEyXkFqcGdeQXVyNDQ2OTk4MzI@._V1_.jpg",
+    "reviews": []
+  },
+  {
+    "title": "Pulp fiction",
+    "year": 1995,
+    "director": "Tarantino Quentin",
+    "genre": "Crimen",
+    "synopsis": "Vincent y Jules trabajan para Marsellus Wallace, un g\u00c3\u00a1nster que controla los negocios oscuros de la ciudad, entre ellos, las apuestas. Los dos matones tienen diferentes misiones que cumplir para Marsellus. La principal de ellas es recuperar un malet\u00c3\u00adn misterioso. A lo largo de sus tareas, su destino se entrelaza con los m\u00c3\u00a1s diversos personajes.",
+    "img_url": "",
+    "reviews": ["mi rese\u00f1a"]
+  },
+  {
+    "title": "El cadaver de la novia",
+    "year": 2005,
+    "director": "Burton Tim",
+    "genre": "Fantastico",
+    "synopsis": "Ambientada en una aldea europea del siglo 19, esta pel\u00c3\u00adcula de animaci\u00c3\u00b3n cuenta la historia de V\u00c3\u00adctor, un joven que es llevado repentinamente al inframundo al casarse accidentalmente con una misteriosa novia que es un cad\u00c3\u00a1ver mientras que su novia real, Victoria, le espera en la tierra de los vivos. A\u00c3\u00ban cuando la vida en el mundo de los muertos resulta ser mucho m\u00c3\u00a1s colorida de lo que su estricta educaci\u00c3\u00b3n ofrec\u00c3\u00ada, V\u00c3\u00adctor comprende que no existe nada en esta vida ni en la otra, que lo pueda separar de su verdadero amor.",
+    "img_url": "https://static.wikia.nocookie.net/cine/images/3/3c/Corpse_Bride_Poster.jpg/revision/latest?cb=20201031235241",
+    "reviews": [
+      "El se\u00c3\u00b1or Burton estuvo muy acertado con este film... l\u00c3\u00a1stima que \u00c3\u00baltimamente se pierda un poco en los guiones...",
+      "Me ENCANTA esta pel\u00c3\u00adcula ^-^ Y el final para m\u00c3\u00ad no puede ser mejor ^-^",
+      "Como me enamore de estos personajes... Mi parte favorita es el regreso de los muertos al mundo de los vivos... Cuando el abuelito abraza al ni\u00c3\u00b1o."
+    ]
+  }
 ]
