@@ -3,7 +3,7 @@ from flask import Flask, jsonify, request, session
 import json
 
 app = Flask(__name__)
-# app.secret_key = 'tupsito'
+app.secret_key = 'tupsito'
 
 # ----- MODULOS PUBLICOS --------------------------------------
 # Ruta para el módulo publico
@@ -170,7 +170,7 @@ def add_movie():
         
     movie_added = False
     # Si la película ya se encuentra en la lista, simplemente se agrega la review a la lista de reviews
-    for movie in enumerate(movies):
+    for i, movie in enumerate(movies):
         if movie['title'] == movie_data['title'] and movie['year'] == movie_data['year']:
             return 'La pelicula ya existe', 400
     # Si la película no se encuentra, se añade correctamente y se agrega la review
